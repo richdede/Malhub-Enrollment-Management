@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('user_type', ['admin', 'student', 'workspace_user'])->default('student');
             $table->string('name');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
