@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    public function createUser(Request $request){
+    public function createUser(Request $request)
+    {
 
-        try{
-            $validateUser = Validator::make($request->all(),[
+        try {
+            $validateUser = Validator::make($request->all(), [
                 'user_type' => ['required', 'string', 'in:admin,student,workspace_user'],
                 'name' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:11'],
@@ -21,7 +22,7 @@ class LoginController extends Controller
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
-            if($validateUser->fails()){
+            if ($validateUser->fails()) {
                 return response()->json([
                     'status' => false,
                     'message' => 'validation error',
@@ -41,13 +42,13 @@ class LoginController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'User created successfully',
-                'token' =>$user->createToken("API TOKEN")->plainTextToken
+                'token' => $user->createToken("API TOKEN")->plainTextToken
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => false,
                 'message' => $th->getMessage()
-            ],500);
+            ], 500);
         }
     }
 }
