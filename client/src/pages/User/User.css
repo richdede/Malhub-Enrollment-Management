@@ -31,10 +31,15 @@
   font-family: "Sora", Sans-serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 22.68px;
   color: #505050;
   fill: #505050;
+  line-height: 22.68px;
   /* color: #7b1fa2; */
+}
+@media (max-width: 720px) {
+  .links {
+    display: none;
+  }
 }
 /* 
 .links: {
@@ -75,18 +80,22 @@
 } */
 a {
   text-decoration: none;
+  color: #505050;
+  fill: #505050;
 }
 .links li {
   list-style: none;
-  height: 35px;
-  padding-top: 10px;
+  height: 30px;
+  padding-top: 5px;
 }
 .dropdown_links li:hover {
   background-color: #3c4493;
-  color: #fff;
   transition: 0.5s ease-out;
   border-color: #f4a721;
   padding-left: 10px;
+}
+.dropdown_links a:hover {
+  color: #fff;
 }
 .logo {
   margin-left: 40px;
@@ -111,11 +120,11 @@ a {
   color: #505050;
   fill: #505050;
   border: 1px solid #fff;
-  width: 250px;
-  padding-left: 30px;
+  width: 220px;
+  padding-left: 50px;
   position: relative;
   bottom: 10px;
-  right: 30px;
+  right: 40px;
 }
 .dropdown:hover .dropdown_menu {
   display: block;
@@ -140,6 +149,7 @@ a {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
+  margin-top: 6px;
   transition: transform 0.2s;
   display: flex;
   cursor: pointer;
@@ -159,7 +169,7 @@ a {
   align-items: center;
   margin-left: 0;
   margin-right: 0;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
@@ -172,28 +182,55 @@ a {
   text-align: center;
   margin: 20px;
 }
-.img_logo img {
-  width: 900px;
-  margin-left: 230px;
-  margin-right: 150px;
-  object-fit: cover;
-  border: 1px solid #9da1c9;
+.Logo {
+  background-color: #3d4685;
+  max-width: 100%;
   border-radius: 20px;
-  opacity: 0.4;
+  height: 600px;
+  max-width: 100%;
+  margin-left: 90px;
+  margin-right: 90px;
+  text-align: center;
 }
+.img_logo {
+  background-image: url(https://malhub.org/wp-content/uploads/2023/10/new-home-hero-image-1.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0.9;
+  opacity: 0.5;
+  border-radius: 20px;
+  height: 600px;
+  max-width: 100%;
+}
+.heading_paragraph_img {
+  color: #fff;
+}
+.heading_paragraph_img h2 {
+  font-size: 55px;
+  font-weight: 500;
+  padding-top: 100px;
+}
+.heading_paragraph_img p {
+  font-weight: 200;
+  font-size: 25px;
+}
+
 .courses {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 50px;
   background-color: #9024be;
   padding: 10px;
   margin-left: 250px;
   margin-right: 250px;
 }
-
 button {
   color: blue;
   grid-column-gap: 0.5rem;
@@ -230,20 +267,32 @@ button:hover {
 .footer {
   color: white;
 }
-.footer p {
+.footer .display_footer {
+  background-color: #212121;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3em;
+}
+.link_ul {
+  display: flex;
+  gap: 3em;
+}
+.link_ul li {
+  list-style-type: none;
+}
+.link_ul .link a {
+  color: white;
+}
+/* .footer p {
   width: 200px;
 }
 .foot {
   background-color: #212121;
   width: 100%;
 }
-.link_ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 .bottom {
   border-bottom: 2.5px solid #7b1fa2;
   background-color: #7b1fa2;
   width: 100%;
-}
+}  */

@@ -1,53 +1,68 @@
 import React from "react";
-import "./user.css";
-import { Link } from "react-router-dom";
 const logo = "Malhub-logo.png";
+import "./User.css";
+import { Link } from "react-router-dom";
 
 const User = () => {
   return (
     <div className="User">
       <nav className="bar">
         <div className="logo">
-          <Link to="/">
-            <img src={logo} alt="logo" style={{ width: "150px" }} />
-          </Link>
+          <img src={logo} alt="logo" style={{ maxWidth: "50%" }} />
         </div>
         <ul className="links">
-          <a href="/Home" className="links">
-            <li>Home</li>
-          </a>
+          <li>
+            <a href="Home">Home</a>
+          </li>
           <div className="dropdown">
-            <li>Tech Skills</li>
+            <li>
+              <a href="/">Training</a>
+            </li>
             <div className="dropdown_menu">
               <ul className="dropdown_links">
-                <li>Onsite Programme</li>
-                <li>Virtual Programme</li>
+                <li>
+                  <a href="/">Onsite Programme</a>
+                </li>
+                <li>
+                  <a href="/">Virtual Programme</a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="dropdown">
-            <li>Services</li>
+            <li>
+              <a href="/">Services</a>
+            </li>
             <div className="dropdown_menu">
               <ul className="dropdown_links">
-                <li>Co-Working Space</li>
-                <li>Incubation</li>
-                <li>Business Support and Consultation</li>
-                <li>Partnership and Collaboration</li>
+                <li>
+                  <a href="/">WorkSpace</a>
+                </li>
+                <li>
+                  <a href="/">Incubation</a>
+                </li>
+                <li>
+                  <a href="/">Business Support and Consultation</a>
+                </li>
+                <li>
+                  <a href="/">Partnership and Collaboration</a>
+                </li>
               </ul>
             </div>
           </div>
-          <a href="/About" className="links">
-            <li>About</li>
-          </a>
+          <li>
+            <a href="About">About</a>
+          </li>
         </ul>
         <div className="RegLog">
-          <Link to="/Login">
-            <button className="Login">Login</button>
+          <Link to="Login">
+            <button className="Login ">Login</button>
           </Link>
-          <Link to="/Register">
+          <Link to="Register">
             <button className="Reg">Register</button>
           </Link>
         </div>
+        {/* </div> */}
       </nav>
     </div>
   );
