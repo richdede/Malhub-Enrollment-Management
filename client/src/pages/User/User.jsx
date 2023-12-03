@@ -8,16 +8,17 @@ const User = () => {
     <div className="User">
       <nav className="bar">
         <div className="logo">
-          <img src={logo} alt="logo" style={{ maxWidth: "50%" }} />
+          {" "}
+          <a href="/">
+            <img src={logo} alt="logo" style={{ maxWidth: "50%" }} />
+          </a>
         </div>
         <ul className="links">
           <li>
-            <a href="Home">Home</a>
+            <a href="/">Home</a>
           </li>
           <div className="dropdown">
-            <li>
-              <a href="/">Training</a>
-            </li>
+            <li>Training</li>
             <div className="dropdown_menu">
               <ul className="dropdown_links">
                 <li>
@@ -30,13 +31,11 @@ const User = () => {
             </div>
           </div>
           <div className="dropdown">
-            <li>
-              <a href="/">Services</a>
-            </li>
+            <li>Services</li>
             <div className="dropdown_menu">
               <ul className="dropdown_links">
                 <li>
-                  <a href="/">WorkSpace</a>
+                  <a href="workspace">WorkSpace</a>
                 </li>
                 <li>
                   <a href="/">Incubation</a>
