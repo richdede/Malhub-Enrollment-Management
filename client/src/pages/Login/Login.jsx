@@ -2,25 +2,20 @@ import { useState } from "react";
 import axios from "axios";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-  });
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.formDatabase]: e.target.value });
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/auth/register",
-        formData
-      );
-      console.log(response.data);
+      //api enpoint for login
+      const response = await axios.post("/api/login", { name, email });
+      //api token for login
+      const token = response.data.token;
+
+      window.location.href = "/dashboard";
     } catch (error) {
-      console.error("Registration failed", error);
+      setError("Invalid email or name");
     }
   };
   return (
@@ -29,13 +24,14 @@ const Login = () => {
         <div className="register_users">
           <h2>Sign up and start learning</h2>
         </div>
-        <form action="" onSubmit={handleSubmit}>
+        <form>
           <label htmlFor="name">username</label>
           <input
             type="text"
-            placeholder="username"
-            name="username"
-            onChange={handleChange}
+            placeholder="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
           <label htmlFor="email">user email</label>
@@ -43,10 +39,13 @@ const Login = () => {
             type="email"
             placeholder="email"
             name="email"
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <button type="submit">Register Now</button>
+          <button type="submit" onClick={handleLogin}>
+            Login Now
+          </button>
+          
         </form>
       </div>
     </div>

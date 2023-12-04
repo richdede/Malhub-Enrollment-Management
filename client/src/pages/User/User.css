@@ -30,15 +30,15 @@
   /* position: absolute;
   bottom: 100%;
   left: 0; */
-  z-index: 2;
   min-width: 120px;
   background: red;
   border-radius: 0 0 4px 4px;
-  -webkit-transform: translateY(20px);
-  transform: translateY(20px);
+  /* -webkit-transform: translateY(20px);
+  transform: translateY(20px); */
   background-color: white;
   /* visibility: hidden;
   opacity: 0; */
+  z-index: 2;
   padding: 10px 15px;
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

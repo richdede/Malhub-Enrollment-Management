@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Footer from "./components/Footer/Footer";
 import Workspace from "./components/Workspacing/Workspace";
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +22,8 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="workspace" element={<Workspace />} />
+        <Route path="workspace" element={<Workspace />} />1
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </BrowserRouter>

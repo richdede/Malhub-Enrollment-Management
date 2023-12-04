@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link, redirect } from "react-router-dom";
+import Dashboard from "../../components/Dashboard/Dashboard";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    user_type: "",
+    
+    user_type: "student",
     name: "",
     phone: "",
     address: "",
@@ -15,17 +21,30 @@ const Register = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    var errorMessage = "";
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/api/auth/register",
         formData
       );
-      console.log(response.data);
+      console.log(response);
+      // if (response.status === 200) {
+      //   let token = response.data.token;
+      //   localStorage.setItem("token", token);
+      //   console.log(localStorage.getItem("token"));
+      //   //set isAuthebticated = true;
+      //   navigate("/dashboard"); // process redirection to dashboard;
+      //   return null;
+      // }
+      window.location.href = "/dashboard";x
+
+      //errorMessage = response.data.errors;
+      //alert(response.data.errors);
     } catch (error) {
-      console.error("Registration failed", error);
+      console.error("Registration failed", errorMessage);
     }
   };
 
@@ -35,15 +54,15 @@ const Register = () => {
         <div className="register_users">
           <h2>Sign up and start learning</h2>
         </div>
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="name">username</label>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
-            placeholder="username"
+            placeholder="Name"
             id="name"
-            name="username"
+            name="name"
             onChange={handleChange}
-            value={formData.username}
+            value={formData.name}
             required
           />
           <label htmlFor="phone">Your Number</label>
@@ -51,9 +70,9 @@ const Register = () => {
             type="phone"
             placeholder="phone"
             id="phone"
-            name="pone"
+            name="phone"
             onChange={handleChange}
-            // value={formData.phone}
+            value={formData.phone}
             required
           />
           <label htmlFor="address">Your Address</label>
