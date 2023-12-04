@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Workspace_Package extends Model
+class Workspacepackage extends Model
 {
     use HasFactory;
 
