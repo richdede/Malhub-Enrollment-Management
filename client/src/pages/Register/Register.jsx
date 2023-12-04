@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, redirect } from "react-router-dom";
-import Dashboard from "../../components/Dashboard/Dashboard";
+// import { Link, redirect } from "react-router-dom";
+// import Dashboard from "../../components/Dashboard/Dashboard";
 import { useNavigate } from "react-router-dom";
-
-const navigate = useNavigate();
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    
     user_type: "student",
     name: "",
     phone: "",
@@ -17,6 +14,8 @@ const Register = () => {
     password: "",
     password_confirmation: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,19 +29,24 @@ const Register = () => {
         "http://127.0.0.1:8000/api/auth/register",
         formData
       );
-      console.log(response);
-      // if (response.status === 200) {
-      //   let token = response.data.token;
-      //   localStorage.setItem("token", token);
-      //   console.log(localStorage.getItem("token"));
-      //   //set isAuthebticated = true;
-      //   navigate("/dashboard"); // process redirection to dashboard;
-      //   return null;
-      // }
-      window.location.href = "/dashboard";x
+      console.log(response.data);
+      if (response.data.status) {
+        navigate("/dashboard");
+      } else {
+        alert("Error registering user");
+      }
+      if (response.status === 200) {
+        let token = response.data.token;
+        localStorage.setItem("token", token);
+        console.log(localStorage.getItem("token"));
+        // set isAuthebticated = true;
+        navigate("/dashboard"); // process redirection to dashboard;
+        return null;
+      }
+      window.location.href = "/dashboard";
 
-      //errorMessage = response.data.errors;
-      //alert(response.data.errors);
+      errorMessage = response.data.errors;
+      alert(response.data.errors);
     } catch (error) {
       console.error("Registration failed", errorMessage);
     }
