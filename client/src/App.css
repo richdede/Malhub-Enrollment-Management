@@ -94,3 +94,49 @@ input:focus::-moz-placeholder {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+/* dashboardcss */
+*{
+  padding: 0;
+  margin: 0;
+}
+.sidebar{
+  width: 30%;
+  height: 90vh;
+  padding: 30px ;
+  /* background-color: red; */
+  border-right: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container{
+  display: flex;
+  gap: 30px;
+}
+
+.logo{
+  max-width: 5%;
+}
+
+/* ul:first-child{
+background-color: red;
+} */
+.dashboardUl{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.dashboardLI{
+    display: flex;
+    gap: 10px;
+  background-color: red;
+}
+.dashboardLI:hover{
+  color: blue;
+  background-color:powderblue;
+  cursor: pointer;
+}
+
+.welcomeP{
+  text-align: center;
+}
