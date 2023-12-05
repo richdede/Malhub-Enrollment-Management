@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import { Link, redirect } from "react-router-dom";
 // import Dashboard from "../../components/Dashboard/Dashboard";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -115,6 +115,9 @@ const Register = () => {
             required
           />
           <button type="submit">Register Now</button>
+          <span style={{ textAlign: "center", marginTop: "10px" }}>
+            or <Link to="/login">Login</Link>
+          </span>
         </form>
       </div>
     </div>
