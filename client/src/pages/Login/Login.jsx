@@ -1,21 +1,38 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+// import { loadConfigFromFile } from "vite";
 
 const Login = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (data) => {
     try {
-      //api enpoint for login
-      const response = await axios.post("/api/login", { name, email });
-      //api token for login
-      const token = response.data.token;
-
-      window.location.href = "/dashboard";
+      setLoading(true);
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/login",
+        data
+      );
+      console.log(response);
+      toast.success("Login successful");
+      navigate("/sidebar");
+      const token = response.data.token
+      localStorage.setItem('token', token)
+      const newUser = response.data.user.name
+      localStorage.setItem('user', newUser)
     } catch (error) {
-      setError("Invalid email or name");
+      console.error(error.response.data);
+      toast.error("Login failed, Check your credentials and try again.");
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -24,28 +41,19 @@ const Login = () => {
         <div className="register_users">
           <h2>Sign up and start learning</h2>
         </div>
-        <form>
-          <label htmlFor="name">username</label>
-          <input
-            type="text"
-            placeholder="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+        <form onSubmit={handleSubmit(handleLogin)}>
           <label htmlFor="email">user email</label>
+          <input {...register("email", { required: "email is required" })} />
+          {errors.email && <p>{errors.email.message}</p>}
+          <label htmlFor="password">Password</label>
           <input
-            type="email"
-            placeholder="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            type="password"
+            {...register("password", { required: "password is required" })}
           />
-          <button type="submit" onClick={handleLogin}>
+          {errors.password && <p>{errors.password.message}</p>}
+          <button type="submit" disabled={loading}>
             Login Now
           </button>
-          
         </form>
       </div>
     </div>

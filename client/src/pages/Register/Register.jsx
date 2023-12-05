@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 // import { Link, redirect } from "react-router-dom";
 // import Dashboard from "../../components/Dashboard/Dashboard";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    user_type: "student",
+    user_type: "",
     name: "",
     phone: "",
     address: "",
@@ -16,9 +16,9 @@ const Register = () => {
   });
 
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -29,24 +29,14 @@ const Register = () => {
         "http://127.0.0.1:8000/api/auth/register",
         formData
       );
-      console.log(response.data);
+      console.log(response);
       if (response.data.status) {
-        navigate("/dashboard");
+        let token = response.data.token;
+        localStorage.setItem("token", token);
+        navigate("/sidebar");
       } else {
         alert("Error registering user");
       }
-      if (response.status === 200) {
-        let token = response.data.token;
-        localStorage.setItem("token", token);
-        console.log(localStorage.getItem("token"));
-        // set isAuthebticated = true;
-        navigate("/dashboard"); // process redirection to dashboard;
-        return null;
-      }
-      window.location.href = "/dashboard";
-
-      errorMessage = response.data.errors;
-      alert(response.data.errors);
     } catch (error) {
       console.error("Registration failed", errorMessage);
     }
@@ -59,6 +49,11 @@ const Register = () => {
           <h2>Sign up and start learning</h2>
         </div>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="user_type"></label>
+          <select name="user_type" onChange={handleChange} required>
+            <option value="student">Student</option>
+            <option value="workspace_user">Workspace</option>
+          </select>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -109,9 +104,9 @@ const Register = () => {
             value={formData.password}
             required
           />
-          <label htmlFor="password_confirmation">Conform Password</label>
+          <label htmlFor="password_confirmation">Confirm Password</label>
           <input
-            type="password_confirmation"
+            type="password"
             placeholder="password_confirmation"
             id="password_confirmation"
             onChange={handleChange}
