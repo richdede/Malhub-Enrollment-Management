@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->on('users')->cascadeOnDelete();
             $table->foreignId('course_id')->on('courses')->cascadeOnDelete();
-            $table->foreignId('workspace_package_id')->on('workspace_packages')->cascadeOnDelete();
+            $table->foreignId('workspacepackage_id')->on('workspacepackages')->cascadeOnDelete();
             $table->timestamps();
         });
     }
