@@ -129,7 +129,7 @@ background-color: red;
 .dashboardLI{
     display: flex;
     gap: 10px;
-  background-color: red;
+  /* background-color: red; */
 }
 .dashboardLI:hover{
   color: blue;

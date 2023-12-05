@@ -1,4 +1,6 @@
 import React from 'react';
+// import {redirect, useHistory} from 'react-router-dom';
+// import axios from 'axios';
 const logo = "Malhub-logo.png";
 const dashboardLogo = "dashboards.png";
 const courseLogo = "homework.png";
@@ -21,15 +23,23 @@ const Sidebar = () => {
         <li className='dashboardLI'> <img src={paymentLogo} alt="logo" className='logo' />payment history</li>
       </ul>
       </nav>
+    
         <div>
         <h1>My Dashboard</h1>
-          <p>welcome </p>
+          {/* <p>welcome, {user.name} </p> */}
         </div>
       </div>
     </>
   );
 };
-
+// const handleLogin = async () => {
+//   try {
+//     const response = await axios.post('/api/login',{username,password});
+//     const userData = response.data;
+//     setUser(userData);
+//     redirectToWelcome();
+//   }catch (error)
+// }
 export default Sidebar;
 
         
