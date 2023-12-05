@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CourseUserController;
 use App\Http\Controllers\WorkspacepackageController;
@@ -51,4 +52,13 @@ Route::get('/users/{userId}/workspace-packages', [CourseUserController::class, '
      *  GET           /users/{user}               show    users.show
      *  PUT|PATCH     /users/{user}               update  users.update
      *   DELETE        /users/{user}               destroy users.destroy
+     */
+
+
+    Route::apiResource('payments', PaymentController::class);
+
+    /**
+     * To retrieve all payments: GET http://your-app-url/api/payments
+     *  To retrieve a specific payment: GET http://your-app-url/api/payments/{id}
+     *   To create a new payment: POST http://your-app-url/api/payments with the enrollment_id in the request payload.
      */
