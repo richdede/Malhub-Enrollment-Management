@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CourseUserController;
 use App\Http\Controllers\WorkspacepackageController;
 
 /*
@@ -26,3 +27,14 @@ Route::post('/auth/login', [LoginController::class, 'loginUser']);
 
 Route::apiResource('/course', CourseController::class);
 Route::apiResource('/package', WorkspacepackageController::class);
+
+//user enroll for course
+Route::post('/courses/{courseId}/users/{userId}/enroll', [CourseUserController::class, 'enrollUserInCourse']);
+//user subscribed to a package
+Route::post('/workspacepackages/{workspacePackageId}/users/{userId}/enroll', [CourseUserController::class, 'enrollUserInWorkspacePackage']);
+
+
+// for enrolled users
+Route::get('/users/{userId}/courses', [CourseUserController::class, 'getCoursesByUserId']);
+//for packages subscribed users
+Route::get('/users/{userId}/workspace-packages', [CourseUserController::class, 'getWorkspacePackagesByUserId']);

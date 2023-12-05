@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->on('users')->cascadeOnDelete();
-            $table->foreignId('course_id')->on('courses')->cascadeOnDelete();
-            $table->foreignId('workspacepackage_id')->on('workspacepackages')->cascadeOnDelete();
+            $table->foreignId('course_id')->on('courses')->cascadeOnDelete()->nullable();
+            $table->foreignId('workspacepackage_id')->on('workspacepackages')->cascadeOnDelete()->nullable();
             $table->timestamps();
+
+            $table->unique(['user_id', 'course_id']);
+
+            $table->unique(['user_id', 'workspacepackage_id']);
         });
     }
 
