@@ -25,7 +25,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/auth/register', [LoginController::class, 'createUser']);
 Route::post('/auth/login', [LoginController::class, 'loginUser']);
 
+//crud functionality for course
 Route::apiResource('/course', CourseController::class);
+//Crud functionality for packages
 Route::apiResource('/package', WorkspacepackageController::class);
 
 //user enroll for course
@@ -38,3 +40,15 @@ Route::post('/workspacepackages/{workspacePackageId}/users/{userId}/enroll', [Co
 Route::get('/users/{userId}/courses', [CourseUserController::class, 'getCoursesByUserId']);
 //for packages subscribed users
 Route::get('/users/{userId}/workspace-packages', [CourseUserController::class, 'getWorkspacePackagesByUserId']);
+
+
+
+//apiResource used above
+    /**
+     * Verb          Path                        Action  Route Name
+     *  GET           /users                      index   users.index
+     *  POST          /users                      store   users.store
+     *  GET           /users/{user}               show    users.show
+     *  PUT|PATCH     /users/{user}               update  users.update
+     *   DELETE        /users/{user}               destroy users.destroy
+     */
