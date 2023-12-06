@@ -16,6 +16,8 @@ import Sidebar from "./components/Dashboard/Sidebar";
 import { UserContext } from "../context/user";
 import Contents from "./components/Contents";
 import Courses from "./components/Courses";
+import CourseReg from './components/Dashboard/CourseReg'
+
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -41,6 +43,8 @@ function App() {
             <Route path="workspace" element={<Contents details='workspace2' />} />
             <Route path="payment" element={<Contents details='payment3' />} />
           </Route>
+          <Route path="/courseReg" element={<CourseReg />} />
+
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
