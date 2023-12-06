@@ -10,7 +10,7 @@ const User = () => {
         <div className="logo">
           {" "}
           <a href="/">
-            <img src={logo} alt="logo" style={{ maxWidth: "50%" }} />
+            <img src={logo} alt="logo" style={{ maxWidth: "150px" }} />
           </a>
         </div>
         <ul className="links">

@@ -1,13 +1,18 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import { Link } from "react-router-dom";
 // import { useState } from 'react';
 
 // import {redirect, useHistory} from 'react-router-dom';
 // import axios from 'axios';
+=======
+import { useEffect, useState } from "react";
+>>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
 const logo = "Malhub-logo.png";
 // const dashboardLogo = "dashboards.png";
 const courseLogo = "homework.png";
 const workspaceLogo = "workplace.png";
+<<<<<<< HEAD
 // const paymentLogo = "transaction-history.png"
 
 
@@ -136,10 +141,53 @@ const workspaceLogo = "workplace.png";
         {/* </div>
         <div>
 
+=======
+const paymentLogo = "transaction-history.png";
+
+const Sidebar = () => {
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) location.assign("/login");
+    setUser(localStorage.getItem('user'))
+  }, []);
+
+  return (
+    <>
+      <div className="container">
+        <nav className="sidebar">
+          <img src={logo} alt="logo" style={{ maxWidth: "30%" }} />
+          {/* <p>welcome </p> */}
+
+          <ul className="dashboardUl">
+            <li className="dashboardLI">
+              <img src={dashboardLogo} alt="logo" className="logo" />
+              dashbord
+            </li>
+            <li className="dashboardLI">
+              <img src={courseLogo} alt="logo" className="logo" />
+              courses
+            </li>
+            <li className="dashboardLI">
+              <img src={workspaceLogo} alt="logo" className="logo" />
+              workspaces
+            </li>
+            <li className="dashboardLI">
+              {" "}
+              <img src={paymentLogo} alt="logo" className="logo" />
+              payment history
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <h1>My Dashboard</h1>
+          {user && <p>welcome {user} </p>}
+>>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
         </div>
       </div>
     </>
   );
+<<<<<<< HEAD
 }; */}
 {/* // const handleLogin = async () => { */}
 {/* //   try { */}
@@ -923,3 +971,8 @@ export default Sidebar;
 
 
 
+=======
+};
+
+export default Sidebar;
+>>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
