@@ -1,0 +1,28 @@
+.sides{
+    width: 30%;
+    height: 100%;
+    background: blue;
+}
+
+.sidelists{
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 40px;
+}
+
+.list{
+    display: flex;
+    gap: 30px;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sidelists .active{
+    background: white;
+}
+
+.list img{
+    width: 20px;
+}
