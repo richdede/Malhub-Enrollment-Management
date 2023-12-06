@@ -15,7 +15,7 @@ const User = () => {
         </div>
         <ul className="links">
           <li>
-            <a href="/sidebar">Home</a>
+            <a href="/">Home</a>
           </li>
           <div className="dropdown">
             <li>Training</li>
