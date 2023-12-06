@@ -16,6 +16,16 @@ class CourseUserController extends Controller
     {
 
         $enrollment = new Enrollment();
+        $check = Enrollment::where([
+            'user_id' => $userId,
+            'course_id' => $courseId,
+        ])->count();
+
+        if ($check > 0) return response()->json([
+            'success' => false,
+            'message' => 'You have been enrolled to this course.'
+        ]);
+
         $enrollment->user_id = $userId;
         $enrollment->course_id = $courseId;
         $enrollment->save();
@@ -27,6 +37,16 @@ class CourseUserController extends Controller
     {
 
         $enrollment = new Enrollment();
+        $check = Enrollment::where([
+            'user_id' => $userId,
+            'workspacepackage_id' => $workspacepackageId,
+        ])->count();
+
+        if ($check > 0) return response()->json([
+            'success' => false,
+            'message' => 'You have been subscribed to this package.'
+        ]);
+
         $enrollment->user_id = $userId;
         $enrollment->workspacepackage_id = $workspacepackageId;
         $enrollment->save();

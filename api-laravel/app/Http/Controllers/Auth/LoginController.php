@@ -28,7 +28,7 @@ class LoginController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateUser->errors()
-             p   ], 401);
+                ], 401);
             }
 
             $user = User::create([

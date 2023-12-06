@@ -29,7 +29,7 @@ Route::post('/auth/login', [LoginController::class, 'loginUser']);
 //crud functionality for course
 Route::apiResource('/course', CourseController::class);
 //Crud functionality for packages
-Route::apiResource('/package', WorkspacepackageController::class);
+Route::apiResource('workspace-packages', WorkspacepackageController::class);
 
 //user enroll for course
 Route::post('/courses/{courseId}/users/{userId}/enroll', [CourseUserController::class, 'enrollUserInCourse']);
@@ -45,20 +45,20 @@ Route::get('/users/{userId}/workspace-packages', [CourseUserController::class, '
 
 
 //apiResource used above
-    /**
-     * Verb          Path                        Action  Route Name
-     *  GET           /users                      index   users.index
-     *  POST          /users                      store   users.store
-     *  GET           /users/{user}               show    users.show
-     *  PUT|PATCH     /users/{user}               update  users.update
-     *   DELETE        /users/{user}               destroy users.destroy
-     */
+/**
+ * Verb          Path                        Action  Route Name
+ *  GET           /users                      index   users.index
+ *  POST          /users                      store   users.store
+ *  GET           /users/{user}               show    users.show
+ *  PUT|PATCH     /users/{user}               update  users.update
+ *   DELETE        /users/{user}               destroy users.destroy
+ */
 
 
-    Route::apiResource('payments', PaymentController::class);
+Route::apiResource('payments', PaymentController::class);
 
-    /**
-     * To retrieve all payments: GET http://your-app-url/api/payments
-     *  To retrieve a specific payment: GET http://your-app-url/api/payments/{id}
-     *   To create a new payment: POST http://your-app-url/api/payments with the enrollment_id in the request payload.
-     */
+/**
+ * To retrieve all payments: GET http://your-app-url/api/payments
+ *  To retrieve a specific payment: GET http://your-app-url/api/payments/{id}
+ *   To create a new payment: POST http://your-app-url/api/payments with the enrollment_id in the request payload.
+ */
