@@ -37,12 +37,14 @@ const Login = () => {
           <h2>Sign up and start learning</h2>
         </div>
         <form onSubmit={handleLogin}>
+          <label htmlFor="email">User Email</label>
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your Email"
           />
+          <label htmlFor="password">User Password</label>
           <input
             type="password"
             value={password}
