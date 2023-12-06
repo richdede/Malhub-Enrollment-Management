@@ -52,7 +52,7 @@ const Register = () => {
           <label htmlFor="user_type"></label>
           <select name="user_type" onChange={handleChange} required>
             <option value="student">Student</option>
-            <option value="workspace_user">Workspace</option>
+            <option value="workspace_user">Workspace User</option>
           </select>
           <label htmlFor="name">Name</label>
           <input
