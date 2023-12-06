@@ -11,9 +11,7 @@ import Workspace from "./components/Workspacing/Workspace";
 // import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-<<<<<<< HEAD
-import { UserContext } from "../context/user";
-import Sidebar from "./components/Dashboard/Sidebar";
+
 =======
 import Sidebar from "./components/Dashboard/Sidebar";
 // import Course from "./components/Dashboard/Course;
