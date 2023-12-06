@@ -14,6 +14,8 @@ import { ToastContainer } from "react-toastify";
 import Sidebar from "./components/Dashboard/Sidebar";
 // import Course from "./components/Dashboard/Course;
 import { UserContext } from "../context/user";
+import Contents from "./components/Contents";
+import Courses from "./components/Courses";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -34,7 +36,11 @@ function App() {
           {/* <PrivateRoute path="dashboard" element={<Sidebar />} /> */}
           <Route path="workspace" element={<Workspace />} />
           <Route path="workspace" element={<Workspace />} />
-          <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="sidebar" element={<Sidebar />} >
+            <Route path="courses" element={<Contents details={<Courses />} />} />
+            <Route path="workspace" element={<Contents details='workspace2' />} />
+            <Route path="payment" element={<Contents details='payment3' />} />
+          </Route>
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
