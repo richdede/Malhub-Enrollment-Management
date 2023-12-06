@@ -9,6 +9,7 @@ import About from "./pages/About/About";
 import Footer from "./components/Footer/Footer";
 import Workspace from "./components/Workspacing/Workspace";
 import Sidebar from "./components/Dashboard/Sidebar";
+// import Course from "./components/Dashboard/Course"
 function App() {
   return (
     <BrowserRouter>
@@ -24,8 +25,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="workspace" element={<Workspace />} />
         <Route path="/sidebar" element={<Sidebar/>} />
+        {/* <Route path="/course" element={<Course />} /> */}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
