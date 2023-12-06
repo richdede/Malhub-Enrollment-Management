@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import User from "./pages/User/User";
 import Login from "./pages/Login/Login";
@@ -12,33 +12,14 @@ import Workspace from "./components/Workspacing/Workspace";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Sidebar from "./components/Dashboard/Sidebar";
-<<<<<<< HEAD
-// import Course from "./components/Dashboard/Course"
-=======
+// import Course from "./components/Dashboard/Course;
 import { UserContext } from "../context/user";
->>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
+
+
+
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
   return (
-<<<<<<< HEAD
-    <BrowserRouter>
-      <>
-        <User />
-        {/* <Home /> */}
-      </>
-      <Routes>
-        <Route path="/" element={<IndexHome />} />
-        <Route path="about" element={<About />} />
-        <Route path="home" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="workspace" element={<Workspace />} />
-        <Route path="/sidebar" element={<Sidebar/>} />
-        {/* <Route path="/course" element={<Course />} /> */}
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-=======
     <UserContext>
       <BrowserRouter>
         <>
@@ -55,13 +36,14 @@ function App() {
           {/* <PrivateRoute path="dashboard" element={<Dashboard />} /> */}
           <Route path="workspace" element={<Workspace />} />
           <Route path="workspace" element={<Workspace />} />
-          <Route path="/sidebar" element={<Sidebar/>} />
+          <Route path="/sidebar" element={<Sidebar />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
-    </UserContext>
->>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
-  );
+      </UserContext>
+    
+      );
 }
 
-export default App;
+
+      export default App;

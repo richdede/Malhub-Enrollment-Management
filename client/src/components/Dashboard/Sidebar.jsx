@@ -1,19 +1,15 @@
-<<<<<<< HEAD
 // import React from 'react';
 // import { Link } from "react-router-dom";
 // import { useState } from 'react';
 
 // import {redirect, useHistory} from 'react-router-dom';
 // import axios from 'axios';
-=======
 import { useEffect, useState } from "react";
->>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
 const logo = "Malhub-logo.png";
 // const dashboardLogo = "dashboards.png";
 const courseLogo = "homework.png";
 const workspaceLogo = "workplace.png";
-<<<<<<< HEAD
-// const paymentLogo = "transaction-history.png"
+const paymentLogo = "transaction-history.png"
 
 
 // const Sidebar = () => {
@@ -159,36 +155,34 @@ const Sidebar = () => {
           <img src={logo} alt="logo" style={{ maxWidth: "30%" }} />
           {/* <p>welcome </p> */}
 
-          <ul className="dashboardUl">
-            <li className="dashboardLI">
-              <img src={dashboardLogo} alt="logo" className="logo" />
-              dashbord
-            </li>
-            <li className="dashboardLI">
-              <img src={courseLogo} alt="logo" className="logo" />
-              courses
-            </li>
-            <li className="dashboardLI">
-              <img src={workspaceLogo} alt="logo" className="logo" />
-              workspaces
-            </li>
-            <li className="dashboardLI">
-              {" "}
-              <img src={paymentLogo} alt="logo" className="logo" />
-              payment history
-            </li>
-          </ul>
-        </nav>
-        <div>
-          <h1>My Dashboard</h1>
-          {user && <p>welcome {user} </p>}
->>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
-        </div>
-      </div>
-    </>
-  );
-<<<<<<< HEAD
-}; */}
+        //   <ul className="dashboardUl">
+        //     <li className="dashboardLI">
+        //       <img src={dashboardLogo} alt="logo" className="logo" />
+        //       dashbord
+        //     </li>
+        //     <li className="dashboardLI">
+        //       <img src={courseLogo} alt="logo" className="logo" />
+        //       courses
+        //     </li>
+        //     <li className="dashboardLI">
+        //       <img src={workspaceLogo} alt="logo" className="logo" />
+        //       workspaces
+        //     </li>
+        //     <li className="dashboardLI">
+        //       {" "}
+        //       <img src={paymentLogo} alt="logo" className="logo" />
+        //       payment history
+        //     </li>
+        //   </ul>
+        // </nav>
+        // <div>
+          // <h1>My Dashboard</h1>
+          // {user && <p>welcome {user} </p>}
+//         </div>
+//       </div>
+//     </>
+//   );
+// }; */}
 {/* // const handleLogin = async () => { */}
 {/* //   try { */}
 {/* //     const response = await axios.post('/api/login',{username,password});
@@ -204,7 +198,6 @@ const Sidebar = () => {
 
 // */}
 
-import React, { useState, useEffect } from 'react';
 
 const Sidebar = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -215,7 +208,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('https:');
+        const response = await fetch('http://');
         const data = await response.json();
         setAvailableCourses(data.courses);
       } catch (error) {
@@ -225,7 +218,7 @@ const Sidebar = () => {
 
     const fetchWorkspaces = async () => {
       try {
-        const response = await fetch('https:');
+        const response = await fetch('http:');
         const data = await response.json();
         setAvailableWorkspaces(data.workspaces);
       } catch (error) {
@@ -351,9 +344,11 @@ const Sidebar = () => {
              <li className='dashboardLI' onClick={() => handleItemClick('Courses')}><img src={courseLogo} alt="logo" className='logo' />courses</li>
 
             <li className='dashboardLI' onClick={() => handleItemClick('Workspaces')}><img src={workspaceLogo} alt="logo" className='logo' />workspaces</li>
-            {/* <li className='dashboardLI' onClick={() => handleItemClick('paymentHistory')}> <img src={paymentLogo} alt="logo" className='logo' />payment history</li> */}
+            <li className='dashboardLI' onClick={() => handleItemClick('paymentHistory')}> <img src={paymentLogo} alt="logo" className='logo' />payment history</li>
           </ul>
         </nav>
+        <h1>My Dashboard</h1>
+          {/* {user && <p>welcome {user} </p>}  */}
 
 
 
@@ -971,8 +966,6 @@ export default Sidebar;
 
 
 
-=======
-};
 
-export default Sidebar;
->>>>>>> ffaac047513f49661f7ebca01942ebf411395da9
+
+// export default Sidebar;
