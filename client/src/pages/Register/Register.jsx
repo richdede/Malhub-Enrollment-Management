@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 // import { Link, redirect } from "react-router-dom";
-// import Dashboard from "../../components/Dashboard/Dashboard";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -35,6 +34,7 @@ const Register = () => {
         localStorage.setItem("token", token);
         navigate("/sidebar");
       } else {
+        // toast.error(response.message);
         alert("Error registering user");
       }
     } catch (error) {
@@ -52,7 +52,7 @@ const Register = () => {
           <label htmlFor="user_type"></label>
           <select name="user_type" onChange={handleChange} required>
             <option value="student">Student</option>
-            <option value="workspace_user">Workspace</option>
+            <option value="workspace_user">Workspace User</option>
           </select>
           <label htmlFor="name">Name</label>
           <input
