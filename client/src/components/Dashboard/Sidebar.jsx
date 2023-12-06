@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const logo = "Malhub-logo.png";
 const dashboardLogo = "dashboards.png";
 const courseLogo = "homework.png";
 const workspaceLogo = "workplace.png";
 const paymentLogo = "transaction-history.png";
-
 const Sidebar = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) location.assign("/login");
-    setUser(localStorage.getItem('user'))
+    setUser(localStorage.getItem("user"));
   }, []);
 
   return (
@@ -27,7 +27,7 @@ const Sidebar = () => {
             </li>
             <li className="dashboardLI">
               <img src={courseLogo} alt="logo" className="logo" />
-              courses
+              Courses
             </li>
             <li className="dashboardLI">
               <img src={workspaceLogo} alt="logo" className="logo" />
