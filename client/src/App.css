@@ -65,10 +65,19 @@
   width: 100%;
   padding: 10px 40px;
 }
+.Register form select {
+  border: 1px solid gray;
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px 40px;
+}
 .Register form button {
   margin-top: 10px;
   width: 100%;
   border-radius: 5px;
+}
+select {
+  position: relative;
 }
 *:focus,
 select:focus,
@@ -129,7 +138,7 @@ background-color: red;
 .dashboardLI{
     display: flex;
     gap: 10px;
-  /* background-color: red; */
+  background-color: red;
 }
 .dashboardLI:hover{
   color: blue;
