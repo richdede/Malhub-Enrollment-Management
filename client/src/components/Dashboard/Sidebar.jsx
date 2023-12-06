@@ -1,30 +1,19 @@
-<<<<<<< HEAD
-import React from 'react'
-import Sides from '../Sides'
-import Contents from '../Contents'
-import './Dashboard.css'
-import { Outlet } from 'react-router-dom'
-=======
 import { useEffect, useState } from "react";
 const logo = "Malhub-logo.png";
 const dashboardLogo = "dashboards.png";
 const courseLogo = "homework.png";
 const workspaceLogo = "workplace.png";
 const paymentLogo = "transaction-history.png";
->>>>>>> origin/master
 
 const Sidebar = () => {
-  return (
-<<<<<<< HEAD
-    <div className='sidebars'>
-      <Sides />
-      <Outlet />
-    </div>
-  )
-}
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) location.assign("/login");
+    setUser(localStorage.getItem('user'))
+  }, []);
 
-export default Sidebar
-=======
+  return (
     <>
       <div className="container">
         <nav className="sidebar">
@@ -61,4 +50,3 @@ export default Sidebar
 };
 
 export default Sidebar;
->>>>>>> origin/master

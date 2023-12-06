@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 // import { Link, redirect } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -30,15 +31,16 @@ const Register = () => {
       );
       console.log(response);
       if (response.data.status) {
+        toast.success("Registration successful", errorMessage);
         let token = response.data.token;
         localStorage.setItem("token", token);
         navigate("/sidebar");
       } else {
-        // toast.error(response.message);
         alert("Error registering user");
       }
     } catch (error) {
-      console.error("Registration failed", errorMessage);
+      // console.error("Registration failed", errorMessage);
+      toast.error("Registration failed, Check your credentials and try again.",errorMessage);
     }
   };
 
