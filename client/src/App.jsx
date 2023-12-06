@@ -11,15 +11,10 @@ import Workspace from "./components/Workspacing/Workspace";
 // import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-
-=======
 import Sidebar from "./components/Dashboard/Sidebar";
 // import Course from "./components/Dashboard/Course;
 import { UserContext } from "../context/user";
 
-
-
->>>>>>> 159d897b209427d598cecc61c45eccd74361adfc
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
   return (
