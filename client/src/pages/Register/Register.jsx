@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 // import { Link, redirect } from "react-router-dom";
-// import Dashboard from "../../components/Dashboard/Dashboard";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -35,6 +34,7 @@ const Register = () => {
         localStorage.setItem("token", token);
         navigate("/sidebar");
       } else {
+        // toast.error(response.message);
         alert("Error registering user");
       }
     } catch (error) {

@@ -82,7 +82,7 @@ class LoginController extends Controller
                 'status' => true,
                 'message' => 'user logged in successfully',
                 'token' => $user->createToken("API TOKEN")->plainTextToken,
-                'user' => $user
+                'user' => $user,
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([

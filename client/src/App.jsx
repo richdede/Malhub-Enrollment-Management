@@ -6,7 +6,7 @@ import Register from "./pages/Register/Register";
 import IndexHome from "./IndexHome";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Workspace from "./components/Workspacing/Workspace";
 // import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,8 +16,6 @@ import Sidebar from "./components/Dashboard/Sidebar";
 import { UserContext } from "../context/user";
 import Contents from "./components/Contents";
 import Courses from "./components/Courses";
-
-
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -35,7 +33,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
-          {/* <PrivateRoute path="dashboard" element={<Dashboard />} /> */}
+          {/* <PrivateRoute path="dashboard" element={<Sidebar />} /> */}
           <Route path="workspace" element={<Workspace />} />
           <Route path="workspace" element={<Workspace />} />
           <Route path="sidebar" element={<Sidebar />} >
