@@ -1,11 +1,13 @@
+// import { toast } from "materialize-css";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-// import { loadConfigFromFile } from "vite";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const {
     register,
     handleSubmit,
@@ -17,7 +19,13 @@ const Login = () => {
   const handleLogin = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post("http://127.0.0.1:8000/api/auth/login");
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
       data;
       console.log(response);
       toast.success("Login successful");
@@ -27,7 +35,6 @@ const Login = () => {
       const newUser = response.data.user.name;
       localStorage.setItem("user", newUser);
     } catch (error) {
-      console.error(error.response.data);
       toast.error("Login failed, Check your credentials and try again.");
     } finally {
       setLoading(false);
@@ -40,13 +47,19 @@ const Login = () => {
           <h2>Sign up and start learning</h2>
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
-          <label htmlFor="email">user email</label>
-          <input {...register("email", { required: "email is required" })} />
+          <label htmlFor="email">Email</label>
+          <input
+            {...register("email", { required: "email is required" })}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           {errors.email && <p>{errors.email.message}</p>}
           <label htmlFor="password">Password</label>
           <input
             type="password"
             {...register("password", { required: "password is required" })}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           {errors.password && <p>{errors.password.message}</p>}
           <button type="submit" disabled={loading}>
