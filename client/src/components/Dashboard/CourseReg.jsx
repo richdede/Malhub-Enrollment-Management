@@ -7,13 +7,14 @@ const RegistrationForm = () => {
     name: '',
     email: '',
     selectedCourse: '',
+    courseName: '',
   });
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/courses/{courseId}/users/{userId}/enroll');
-        setCourses(response.data.courses);
+        const response = await axios.get('http://127.0.0.1:8000/api/course');
+        setCourses(response.data.courses ?? []);
       } catch (error) {
         console.error('Error fetching courses:', error);
       }
@@ -23,23 +24,34 @@ const RegistrationForm = () => {
   }, []); // Run only once on component mount
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    if (name === 'selectedCourse') {
+      const [courseId, courseName] = value.split('-');
+      setFormData({
+        ...formData,
+        selectedCourse: courseId,
+        courseName: courseName, 
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://api.example.com/register', formData);
+      const response = await axios.post(`http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/{userId}/enroll`, formData);
       console.log('Registration successful:', response.data);
 
       setFormData({
         name: '',
         email: '',
         selectedCourse: '',
+        courseName: '', 
       });
     } catch (error) {
       console.error('Error registering:', error.response.data);
@@ -48,7 +60,7 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      <h2> Course Registration Form</h2>
+      <h2>Course Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -66,11 +78,15 @@ const RegistrationForm = () => {
             <option value="" disabled>
               Select a course
             </option>
-            {courses.map((course) => (
-              <option key={course.id} value={course.name}>
-                {course.name} - ${course.price}
-              </option>
-            ))}
+            {courses ? (
+              courses.map((course) => (
+                <option key={course.id} value={`${course.id}-${course.name}`}>
+                  {course.name} - ${course.amount}
+                </option>
+              ))
+            ) : (
+              <option value="" disabled>Loading courses...</option>
+            )}
           </select>
         </label>
         <br />
@@ -81,3 +97,4 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
+

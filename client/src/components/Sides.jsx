@@ -7,18 +7,24 @@ const Sides = () => {
     const sides = [
         {
             id: 1,
+            name: 'Welcome',
+            path: 'Welcome',
+            icon: '../../Public/dashboards.png'
+        },
+        {
+            id: 2,
             name: 'courses',
             path: 'courses',
             icon: '../../Public/homework.png'
         },
         {
-            id: 2,
+            id: 3,
             name: 'workspace',
             path: 'workspace',
             icon: '../../Public/workplace.png'
         },
         {
-            id: 3,
+            id: 4,
             name: 'payment history',
             path: 'payment',
             icon: '../../Public/transaction-history.png'
