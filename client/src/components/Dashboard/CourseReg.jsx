@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const RegistrationForm = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    selectedCourse: '',
-    courseName: '',
+    selectedCourse: "",
   });
-
+  
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/course');
-        setCourses(response.data.courses ?? []);
+        const response = await axios.get("http://127.0.0.1:8000/api/course");
+
+        setCourses(response.data);
       } catch (error) {
-        console.error('Error fetching courses:', error);
+        console.error("Error fetching courses:", error);
       }
     };
 
@@ -25,12 +23,12 @@ const RegistrationForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'selectedCourse') {
-      const [courseId, courseName] = value.split('-');
+    if (name === "selectedCourse") {
+      const [courseId, courseName] = value.split("-");
       setFormData({
         ...formData,
         selectedCourse: courseId,
-        courseName: courseName, 
+        courseName: courseName,
       });
     } else {
       setFormData({
@@ -39,22 +37,23 @@ const RegistrationForm = () => {
       });
     }
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    var userId = localStorage.getItem("userId");
+    
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/{userId}/enroll`, formData);
-      console.log('Registration successful:', response.data);
-
-      setFormData({
-        name: '',
-        email: '',
-        selectedCourse: '',
-        courseName: '', 
-      });
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/${userId}/enroll`,
+        formData
+        );
+        alert("Registration successful:", response.data);
+        
+        setFormData({
+          selectedCourse: "",
+        });
     } catch (error) {
-      console.error('Error registering:', error.response.data);
+      console.error("Error registering:", error.response.data);
     }
   };
 
@@ -63,29 +62,26 @@ const RegistrationForm = () => {
       <h2>Course Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
-          <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
-        </label>
-        <br />
-        <label>
           Select Course:
-          <select name="selectedCourse" value={formData.selectedCourse} onChange={handleInputChange} required>
+          <select
+            name="selectedCourse"
+            value={formData.selectedCourse}
+            onChange={handleInputChange}
+            required
+          >
             <option value="" disabled>
               Select a course
             </option>
             {courses ? (
               courses.map((course) => (
-                <option key={course.id} value={`${course.id}-${course.name}`}>
-                  {course.name} - ${course.amount}
+                <option key={course.id} value={course?.id}>
+                  {course?.name} - {course.amount}
                 </option>
               ))
             ) : (
-              <option value="" disabled>Loading courses...</option>
+              <option value="" disabled>
+                Loading courses...
+              </option>
             )}
           </select>
         </label>
@@ -97,4 +93,3 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
-
