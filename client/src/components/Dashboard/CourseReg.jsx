@@ -4,10 +4,8 @@ import axios from 'axios';
 const RegistrationForm = () => {
   const [courses, setCourses] = useState([]);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    
     selectedCourse: '',
-    courseName: '',
   });
 
   useEffect(() => {
@@ -48,10 +46,7 @@ const RegistrationForm = () => {
       console.log('Registration successful:', response.data);
 
       setFormData({
-        name: '',
-        email: '',
         selectedCourse: '',
-        courseName: '', 
       });
     } catch (error) {
       console.error('Error registering:', error.response.data);
@@ -62,7 +57,7 @@ const RegistrationForm = () => {
     <div>
       <h2>Course Registration Form</h2>
       <form onSubmit={handleSubmit}>
-        <label>
+        {/* <label>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
         </label>
@@ -71,7 +66,7 @@ const RegistrationForm = () => {
           Email:
           <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
         </label>
-        <br />
+        <br /> */}
         <label>
           Select Course:
           <select name="selectedCourse" value={formData.selectedCourse} onChange={handleInputChange} required>
