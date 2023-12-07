@@ -34,6 +34,8 @@ const Login = () => {
       localStorage.setItem("token", token);
       const newUser = response.data.user.name;
       localStorage.setItem("user", newUser);
+      localStorage.setItem("userData", response.data.user);
+      localStorage.setItem("userId", response.data.user.id);
     } catch (error) {
       toast.error("Login failed, Check your credentials and try again.");
     } finally {
