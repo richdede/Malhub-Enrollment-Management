@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-// import { Link, redirect } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -34,12 +33,11 @@ const Register = () => {
         toast.success("Registration successful", errorMessage);
         let token = response.data.token;
         localStorage.setItem("token", token);
-        navigate("/sidebar");
+        navigate("/login");
       } else {
         alert("Error registering user");
       }
     } catch (error) {
-      // console.error("Registration failed", errorMessage);
       toast.error("Registration failed, Check your credentials and try again.",errorMessage);
     }
   };
@@ -53,6 +51,7 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <label htmlFor="user_type"></label>
           <select name="user_type" onChange={handleChange} required>
+            <option value="">Select</option>
             <option value="student">Student</option>
             <option value="workspace_user">Workspace User</option>
           </select>
