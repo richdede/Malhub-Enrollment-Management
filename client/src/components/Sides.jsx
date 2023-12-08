@@ -26,7 +26,7 @@ const Sides = () => {
         },
         {
             id: 4,
-            name: 'Payment history',
+            name: 'Payment',
             path: 'payment',
             icon: '../../Public/transaction-history.png'
         }
@@ -34,8 +34,9 @@ const Sides = () => {
 
     return (
         <div className='sides'>
+                <img className='imag' src={image} alt="logo" style={{ maxWidth: "150px" }} />
+
             <div className="sidelists">
-                <img src={image} alt="logo" style={{ maxWidth: "150px" }} />
 
                 {
 

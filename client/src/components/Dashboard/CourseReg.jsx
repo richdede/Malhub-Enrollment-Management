@@ -5,6 +5,8 @@ import axios from "axios";
 import Sides from "../Sides";
 import './CourseReg.css';
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+// import "../Dashboard/Dashboard.css"
 // import { RedirectFunction } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
 // import Courses from "../Courses";
@@ -118,7 +120,11 @@ const RegistrationForm = () => {
               </select>
             </label>
             <br />
+            <Link to="courses">
             <button type="submit">Register</button>
+
+            </Link>
+
           </form>
 
         </div>

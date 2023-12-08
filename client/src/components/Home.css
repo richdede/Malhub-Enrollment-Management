@@ -36,7 +36,7 @@
 } */
 
 .contents{
-    width: 50vw;
+    width: 24vw;
     padding: 10px 0 0 20px;
     /* background-color: wheat; */
 }
@@ -51,4 +51,9 @@
 
 .courseLink:hover{
     color: black;
+}
+.imag{
+    position: relative;
+    top: 20px;
+    left: 10px;
 }

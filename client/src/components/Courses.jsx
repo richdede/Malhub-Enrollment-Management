@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Home.css';
+// import "./"
 
 const Courses = () => {
   const [registeredCourses, setRegisteredCourses] = useState([]);
@@ -32,11 +33,35 @@ const Courses = () => {
       ) : registeredCourses?.length ? (
         <div>
           <h3>Registered Courses:</h3>
-          <ul>
+          {/* <ul>
             {registeredCourses.map(function (course) {
               return <li key={course.id}>{course.name}</li>;
             })}
-          </ul>
+          </ul> */}
+          <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    {registeredCourses.map(function (course) {
+      return (
+        <tr key={course.id}>
+          <td>{course.id}</td>
+          <td>{course.name}</td>
+          <td>{course.amount}</td>
+          <td>{course.duration}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+<button className="courseBtn"> <a className="courseLink" href="/CourseReg">Register for a course</a> </button>
+
         </div>
       ) : (
         <div>
