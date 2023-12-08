@@ -12,6 +12,7 @@ class Payment extends Model
 
     protected $fillable = [
         'enrollment_id',
+        'amount',
         'status',
         'time_initiated',
         'time_completed',
