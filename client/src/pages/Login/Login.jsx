@@ -28,7 +28,7 @@ const Login = () => {
       data;
       console.log(response);
       toast.success("Login successful");
-      navigate("/sidebar");
+      navigate("/sidebar/welcome");
       const token = response.data.token;
       localStorage.setItem("token", token);
       const newUser = response.data.user.name;
