@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.side{
+    /* width: 65%; */
+    /* background-color: red; */
+} 
+* .courseForm{
+    /* background-color: blue;  */
+    width: 90%;
+    padding:16px 10px;
+} 

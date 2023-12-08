@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
+import './Dashboard.css'
 
 // const Header = () => {
 //     return (
@@ -20,8 +20,9 @@ useEffect(() => {
 }, []);
 return (
 <div>
-           <h1>My Dashboard</h1>
-           {user && <p>welcome {user} </p>}
+           <h2 >My Dashboard</h2>
+           {/* <p className="welcomeP">Welcome</p> */}
+           {user && <p className="welcomeP">Welcome {user} </p>}
          </div>
 )
 }

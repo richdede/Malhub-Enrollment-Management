@@ -1,9 +1,28 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import Contents  from "../Contents";
+// import Sidebar from "./Sidebar";
+import Sides from "../Sides";
+import './CourseReg.css';
+// import { RedirectFunction } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
+// import Courses from "../Courses";
+
 
 const RegistrationForm = () => {
   const [courses, setCourses] = useState();
+  // const [redirect, setRedirect] = useState();
+  // const shouldRedirect = true;
+  // if(shouldRedirect){
+  //      setRedirect(true);
+  // }
+  // if(redirect){
+  //   // return <redirect to = ""/>
+  //   return <Redirect to =""/>
+  // }
+
   const [formData, setFormData] = useState({
+
     selectedCourse: "",
   });
   
@@ -43,6 +62,7 @@ const RegistrationForm = () => {
     var userId = localStorage.getItem("userId");
     
     try {
+
       const response = await axios.post(
         `http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/${userId}/enroll`,
         formData
@@ -57,10 +77,18 @@ const RegistrationForm = () => {
     }
   };
 
+
   return (
     <div>
+      <div className="container">
+        <div className="side">
+           {/* <Sidebar/> */}
+          <Sides/>
+      </div>
+      <div  className="courseForm">
       <h2>Course Registration Form</h2>
       <form onSubmit={handleSubmit}>
+        
         <label>
           Select Course:
           <select
@@ -88,7 +116,10 @@ const RegistrationForm = () => {
         <br />
         <button type="submit">Register</button>
       </form>
+
     </div>
+    </div>
+   </div>
   );
 };
 

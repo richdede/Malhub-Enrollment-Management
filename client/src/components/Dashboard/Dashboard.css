@@ -1,4 +1,36 @@
 .sidebars{
     display: flex;
-    width: 100%;
+    /* gap: 300px; */
+    width: 30%;
+    /* background-color: red; */
+    /* gap: 0; */
+    /* align-items: center; */
+}
+/* .side{
+    width: 50%;
+    background-color: red;
+} */
+
+
+/* course registration css */
+.container{
+    /* float: right; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+/* .courseForm{
+    background-color: blue; 
+} */
+    /* width: 10%;
+}
+
+/* welcome page css */
+
+.welcomeP{
+    text-align: left;
+    padding: 10px;
+    margin-top: 10px;
+    width: 70vw;
+    font-size: 20px;
+    background-color: lightblue;
 }
