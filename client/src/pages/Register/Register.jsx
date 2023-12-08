@@ -40,7 +40,10 @@ const Register = () => {
       }
     } catch (error) {
       // console.error("Registration failed", errorMessage);
-      toast.error("Registration failed, Check your credentials and try again.",errorMessage);
+      toast.error(
+        "Registration failed, Check your credentials and try again.",
+        errorMessage
+      );
     }
   };
 
