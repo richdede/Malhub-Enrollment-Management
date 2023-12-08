@@ -1,7 +1,8 @@
 .sides{
     width: 30%;
-    height: 100%;
+    height: 100vh;
     background: blue;
+    border-right: 2px solid black;
 }
 
 .sidelists{
@@ -19,10 +20,35 @@
     border-radius: 10px;
 }
 
+
 .sidelists .active{
-    background: white;
+    background:lightblue;
+    color: blue;
 }
 
 .list img{
     width: 20px;
+}
+
+/* .container{
+    background-color: blue;
+    width: 100%;
+} */
+
+.contents{
+    /* width: 30%; */
+    padding: 10px 0 0 20px;
+    /* background-color: wheat; */
+}
+
+/* courses css */
+.courseLink{
+    color: white;
+}
+.courseBtn {
+    background-color: blue;
+}
+
+.courseLink:hover{
+    color: black;
 }

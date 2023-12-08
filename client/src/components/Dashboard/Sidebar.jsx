@@ -16,13 +16,18 @@ import { Outlet } from 'react-router-dom'
 // const courseLogo = "homework.png";
 // const workspaceLogo = "workplace.png";
 // const paymentLogo = "transaction-history.png";
+// import Welcome from "../components/Dashboard/Welcome";
+// import Welcome from './Welcome'
 
 
 const Sidebar = () => {
   return (
+
     <div className='sidebars'>
       <Sides />
       <Outlet />
+      {/* <Welcome/> */}
+
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home.css'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
+const image = "Malhub-logo.png";
 
 const Sides = () => {
 
@@ -8,19 +9,19 @@ const Sides = () => {
         {
             id: 1,
             name: 'Welcome',
-            path: 'Welcome',
+            path: '/sidebar/welcome',
             icon: '../../Public/dashboards.png'
         },
         {
             id: 2,
             name: 'courses',
-            path: 'courses',
+            path: '/sidebar/courses',
             icon: '../../Public/homework.png'
         },
         {
             id: 3,
             name: 'workspace',
-            path: 'workspace',
+            path: '/sidebar/workspace',
             icon: '../../Public/workplace.png'
         },
         {
@@ -31,20 +32,23 @@ const Sides = () => {
         }
     ]
 
-  return (
-    <div className='sides'>
-        <div className="sidelists">
-            {
-                sides.map((item) => (
-                    <NavLink className='list' to={item.path} key={item.id}>
-                        <img src={item.icon} alt="" />
-                        <p>{item.name}</p>
-                    </NavLink>
-                ))
-            }
+    return (
+        <div className='sides'>
+            <div className="sidelists">
+                <img src={image} alt="logo" style={{ maxWidth: "150px" }} />
+
+                {
+
+                    sides.map((item) => (
+                        <NavLink className='list' to={item.path} key={item.id}>
+                            <img src={item.icon} alt="" />
+                            <p>{item.name}</p>
+                        </NavLink>
+                    ))
+                }
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Sides
