@@ -4,6 +4,7 @@ import axios from "axios";
 // import Sidebar from "./Sidebar";
 import Sides from "../Sides";
 import './CourseReg.css';
+import { toast } from "react-toastify";
 // import { RedirectFunction } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
 // import Courses from "../Courses";
@@ -25,12 +26,11 @@ const RegistrationForm = () => {
 
     selectedCourse: "",
   });
-  
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/api/course");
-
         setCourses(response.data);
       } catch (error) {
         console.error("Error fetching courses:", error);
@@ -56,22 +56,26 @@ const RegistrationForm = () => {
       });
     }
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     var userId = localStorage.getItem("userId");
-    
+
     try {
 
       const response = await axios.post(
         `http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/${userId}/enroll`,
         formData
-        );
-        alert("Registration successful:", response.data);
-        
-        setFormData({
-          selectedCourse: "",
-        });
+      );
+
+      let amount = response.data.data.enrollment.payment.amount;
+      alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`, response.data);
+
+      toast.success('Registration successful');
+
+      setFormData({
+        selectedCourse: "",
+      });
     } catch (error) {
       console.error("Error registering:", error.response.data);
     }
@@ -82,44 +86,44 @@ const RegistrationForm = () => {
     <div>
       <div className="container">
         <div className="side">
-           {/* <Sidebar/> */}
-          <Sides/>
-      </div>
-      <div  className="courseForm">
-      <h2>Course Registration Form</h2>
-      <form onSubmit={handleSubmit}>
-        
-        <label>
-          Select Course:
-          <select
-            name="selectedCourse"
-            value={formData.selectedCourse}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="" disabled>
-              Select a course
-            </option>
-            {courses ? (
-              courses.map((course) => (
-                <option key={course.id} value={course?.id}>
-                  {course?.name} - {course.amount}
-                </option>
-              ))
-            ) : (
-              <option value="" disabled>
-                Loading courses...
-              </option>
-            )}
-          </select>
-        </label>
-        <br />
-        <button type="submit">Register</button>
-      </form>
+          {/* <Sidebar/> */}
+          <Sides />
+        </div>
+        <div className="courseForm">
+          <h2>Course Registration Form</h2>
+          <form onSubmit={handleSubmit}>
 
+            <label>
+              Select Course:
+              <select
+                name="selectedCourse"
+                value={formData.selectedCourse}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="" disabled>
+                  Select a course
+                </option>
+                {courses ? (
+                  courses.map((course) => (
+                    <option key={course.id} value={course?.id}>
+                      {course?.name} - {course.amount}
+                    </option>
+                  ))
+                ) : (
+                  <option value="" disabled>
+                    Loading courses...
+                  </option>
+                )}
+              </select>
+            </label>
+            <br />
+            <button type="submit">Register</button>
+          </form>
+
+        </div>
+      </div>
     </div>
-    </div>
-   </div>
   );
 };
 

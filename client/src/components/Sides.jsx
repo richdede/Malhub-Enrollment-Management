@@ -14,19 +14,19 @@ const Sides = () => {
         },
         {
             id: 2,
-            name: 'courses',
+            name: 'Courses',
             path: '/sidebar/courses',
             icon: '../../Public/homework.png'
         },
         {
             id: 3,
-            name: 'workspace',
+            name: 'Workspace',
             path: '/sidebar/workspace',
             icon: '../../Public/workplace.png'
         },
         {
             id: 4,
-            name: 'payment history',
+            name: 'Payment history',
             path: 'payment',
             icon: '../../Public/transaction-history.png'
         }

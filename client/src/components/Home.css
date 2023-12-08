@@ -1,5 +1,5 @@
 .sides{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     /* background: blue; */
     border-right: 2px solid black;
