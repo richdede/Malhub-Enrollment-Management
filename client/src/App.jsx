@@ -26,7 +26,7 @@ function App() {
     <UserContext>
       <BrowserRouter>
         <>
-          {/* <User /> */}
+          <User />
           <ToastContainer />
         </>
         <Routes>

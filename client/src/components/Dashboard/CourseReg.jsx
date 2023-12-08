@@ -5,21 +5,21 @@ import axios from "axios";
 import Sides from "../Sides";
 import './CourseReg.css';
 // import { RedirectFunction } from "react-router-dom";
-import { Redirect } from "react-router-dom";
-import Courses from "../Courses";
+// import { Redirect } from "react-router-dom";
+// import Courses from "../Courses";
 
 
 const RegistrationForm = () => {
   const [courses, setCourses] = useState();
-  const [redirect, setRedirect] = useState();
-  const shouldRedirect = true;
-  if(shouldRedirect){
-       setRedirect(true);
-  }
-  if(redirect){
-    // return <redirect to = ""/>
-    return <Redirect to =""/>
-  }
+  // const [redirect, setRedirect] = useState();
+  // const shouldRedirect = true;
+  // if(shouldRedirect){
+  //      setRedirect(true);
+  // }
+  // if(redirect){
+  //   // return <redirect to = ""/>
+  //   return <Redirect to =""/>
+  // }
 
   const [formData, setFormData] = useState({
 

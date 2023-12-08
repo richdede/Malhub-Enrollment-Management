@@ -1,7 +1,7 @@
 .sides{
-    width: 30%;
+    width: 100%;
     height: 100vh;
-    background: blue;
+    /* background: blue; */
     border-right: 2px solid black;
 }
 
@@ -36,7 +36,7 @@
 } */
 
 .contents{
-    /* width: 30%; */
+    width: 50vw;
     padding: 10px 0 0 20px;
     /* background-color: wheat; */
 }
