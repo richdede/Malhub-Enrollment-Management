@@ -38,6 +38,7 @@ const Register = () => {
         alert("Error registering user");
       }
     } catch (error) {
+
       toast.error("Registration failed, Check your credentials and try again.",errorMessage);
     }
   };

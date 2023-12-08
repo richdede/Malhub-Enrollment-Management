@@ -1,10 +1,10 @@
-import React from "react";
-import Landing from "./components/Landing/Landing";
+import LandingLand from "./components/Landing/LandingLand";
 
 const IndexHome = () => {
   return (
     <div>
-      <Landing />
+      {" "}
+      <LandingLand />
     </div>
   );
 };

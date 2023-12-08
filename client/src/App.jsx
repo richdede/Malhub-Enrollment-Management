@@ -7,7 +7,7 @@ import IndexHome from "./IndexHome";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 // import Footer from "./components/Footer/Footer";
-import Workspace from "./components/Workspacing/Workspace";
+import Workspace from "./components/Dashboard/Workspacing/Workspace";
 // import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -16,9 +16,9 @@ import Sidebar from "./components/Dashboard/Sidebar";
 import { UserContext } from "../context/user";
 import Contents from "./components/Contents";
 import Courses from "./components/Courses";
-import CourseReg from './components/Dashboard/CourseReg'
+import CourseReg from "./components/Dashboard/CourseReg";
+import WorkspaceReg from "./components/Dashboard/Workspacing/WorkspaceReg";
 import Welcome from "./components/Dashboard/Welcome";
-
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -39,22 +39,29 @@ function App() {
           {/* <PrivateRoute path="dashboard" element={<Sidebar />} /> */}
           <Route path="workspace" element={<Workspace />} />
           <Route path="workspace" element={<Workspace />} />
-          <Route path="sidebar" element={<Sidebar />} >
-           <Route path="Welcome" element={<Contents details={<Welcome />} />} />
-            
-            <Route path="courses" element={<Contents details={<Courses />} />} />
-            <Route path="workspace" element={<Contents details='workspace2' />} />
-            <Route path="payment" element={<Contents details='payment3' />} />
+          <Route path="sidebar" element={<Sidebar />}>
+            <Route
+              path="Welcome"
+              element={<Contents details={<Welcome />} />}
+            />
+
+            <Route
+              path="courses"
+              element={<Contents details={<Courses />} />}
+            />
+            <Route
+              path="workspace"
+              element={<Contents details={<Workspace />} />}
+            />
+            <Route path="payment" element={<Contents details="payment3" />} />
           </Route>
           <Route path="/courseReg" element={<CourseReg />} />
-
+          <Route path="/workspaceReg" element={<WorkspaceReg />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
-      </UserContext>
-    
-      );
+    </UserContext>
+  );
 }
 
-
-      export default App;
+export default App;

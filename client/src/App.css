@@ -3,9 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
-.logo {
+/*.logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -40,112 +40,184 @@
 .read-the-docs {
   color: #888;
 } */
+.BImg {
+  background-image: url(https://malhub.org/wp-content/uploads/2023/10/new-home-hero-image-1.jpg);
+  transition: ease-in 5s;
+  /* animation: fadeIn 5s; */
+  /* -webkit-transition: background-img 5s; */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: initial;
+  border-radius: 10px;
+  width: 100%;
+  height: 700px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.BImg .Img {
+  background-attachment: fixed;
+  background-color: black;
+  border-radius: 5px;
+  width: 100%;
+  height: 700px;
+  opacity: 0.6;
+}
+.FadeIn_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  gap: 35px;
+}
+.welcome {
+  color: blue;
+}
+.FadeIn_text {
+  color: white;
+  font-size: 15px;
+  font-family: Arial;
+  animation: fadeIn 10s;
+}
+.FadeIn_text {
+  transform: translate(0, 5vh);
+  transition: 1s;
+  font-family: Arial;
+  font-size: 15px;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.enroll {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 70px;
+}
+.enrollList {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.705);
+  height: 35vh;
+  padding-left: 20px;
+}
+/* .enrollList {
+  color: white;
+} */
 .REGLOG {
-  width: 50%;
+  width: 350px;
   margin-top: 20px;
+  margin-left: 20px;
 }
 .Register {
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.register_users {
-  margin-right: 40px;
+  border-radius: 10px;
+  padding-right: 30px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.719);
 }
 .Register form {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
 }
-.Register form input {
-  border: 1px solid gray;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 40px;
-}
-.Register form select {
-  border: 1px solid gray;
-  border-radius: 2px;
-  width: 100%;
-  padding: 10px 40px;
-}
-.Register form button {
-  margin-top: 10px;
-  width: 100%;
-  border-radius: 5px;
-}
+.Register form input,
 select {
-  position: relative;
+  background-color: rgba(128, 128, 128, 0.103);
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px 15px;
+  margin-right: 50px;
+  /* padding: 10px 40px; */
 }
-*:focus,
-select:focus,
-.custom-select:focus,
-button:focus,
-input.form-control:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="phone"]:focus,
-[type="text"].form-control:focus,
-[type="password"].form-control:focus,
-[type="email"].form-control:focus,
-[type="tel"].form-control:focus,
-[contenteditable].form-control:focus {
-  outline: none !important;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.register_users h2 {
+  margin-top: 20px;
+  margin-left: 45px;
+  padding-left: 13px;
+}
+.Register button {
+  margin-top: 10px;
+}
+label {
+  margin-left: 15px;
 }
 
-input:focus::-moz-placeholder {
-  opacity: 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-/* dashboardcss */
-*{
-  padding: 0;
-  margin: 0;
-}
-.sidebar{
+.sidebar {
   width: 20%;
   height: 90vh;
-  padding: 30px 0px 30px 30px ;
+  padding: 30px 0px 30px 30px;
   /* background-color: red; */
   border-right: 4px solid black;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.container{
+.container {
   display: flex;
   gap: 30px;
 }
 
-.logo{
+.logo {
   max-width: 5%;
 }
 
 /* ul:first-child{
 background-color: red;
 } */
-.dashboardUl{
+.dashboardUl {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.dashboardLI{
-    display: flex;
-    gap: 10px;
+.dashboardLI {
+  display: flex;
+  gap: 10px;
   /* background-color: red; */
 }
-.dashboardLI:hover{
+.dashboardLI:hover {
   color: blue;
-  background-color:powderblue;
+  background-color: powderblue;
   cursor: pointer;
 }
 
-.welcomeP{
+.welcomeP {
   text-align: center;
 }
