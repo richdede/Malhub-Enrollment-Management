@@ -8,14 +8,13 @@ use App\Models\Enrollment;
 use Illuminate\Http\Request;
 use App\Models\Workspacepackage;
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
 
 class CourseUserController extends Controller
 {
 
     public function enrollUserInCourse(Request $request, $courseId, $userId)
     {
-
-        $enrollment = new Enrollment();
         $check = Enrollment::where([
             'user_id' => $userId,
             'course_id' => $courseId,
@@ -26,11 +25,32 @@ class CourseUserController extends Controller
             'message' => 'You have been enrolled to this course.'
         ]);
 
-        $enrollment->user_id = $userId;
-        $enrollment->course_id = $courseId;
-        $enrollment->save();
+        $course = Course::where('id', $courseId)->first();
 
-        return response()->json(['message' => 'User enrolled in the course successfully']);
+        if (!$course) return response()->json([
+            'success' => false,
+            'message' => "Invalid course selected"
+        ]);
+
+        $enrollment = Enrollment::create([
+            'user_id' => $userId,
+            'course_id' => $course->id,
+        ]);
+
+        $payment = Payment::create([
+            'enrollment_id' => $enrollment->id,
+            'amount' => $course->amount,
+            'status' => 'pending',
+            'time_initiated' => now()
+        ]);
+
+        $data['enrollment'] = $enrollment;
+        $data['enrollment']['payment'] = $payment;
+
+        return response()->json([
+            'data' => $data,
+            'message' => 'User enrolled in the course successfully'
+        ]);
     }
 
     public function enrollUserInWorkspacePackage(Request $request, $workspacepackageId, $userId)
