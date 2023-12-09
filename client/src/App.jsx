@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import User from "./pages/User/User";
+// import User from "./pages/User/User";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import IndexHome from "./IndexHome";
@@ -19,6 +19,7 @@ import Courses from "./components/Courses";
 import CourseReg from "./components/Dashboard/CourseReg";
 import WorkspaceReg from "./components/Dashboard/Workspacing/WorkspaceReg";
 import Welcome from "./components/Dashboard/Welcome";
+import PaymentHistory from "./components/Dashboard/PaymentHistory";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -26,7 +27,7 @@ function App() {
     <UserContext>
       <BrowserRouter>
         <>
-          <User />
+          {/* <User /> */}
           <ToastContainer />
         </>
         <Routes>
@@ -44,7 +45,6 @@ function App() {
               path="Welcome"
               element={<Contents details={<Welcome />} />}
             />
-
             <Route
               path="courses"
               element={<Contents details={<Courses />} />}
@@ -53,7 +53,10 @@ function App() {
               path="workspace"
               element={<Contents details={<Workspace />} />}
             />
-            <Route path="payment" element={<Contents details="payment3" />} />
+            <Route
+              path="payment"
+              element={<Contents details={<PaymentHistory />} />}
+            />
           </Route>
           <Route path="/courseReg" element={<CourseReg />} />
           <Route path="/workspaceReg" element={<WorkspaceReg />} />

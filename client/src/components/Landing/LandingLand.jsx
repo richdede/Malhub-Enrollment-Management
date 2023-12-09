@@ -49,7 +49,7 @@ const LandingLand = () => {
               scale just do not act that way.
             </h2>
             <a href="Register">
-              <button>Join Us</button>
+              <button className="join">Join Us</button>
             </a>
           </div>
 

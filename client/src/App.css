@@ -140,11 +140,22 @@
 /* .enrollList {
   color: white;
 } */
+
 .REGLOG {
-  width: 350px;
-  margin-top: 20px;
-  margin-left: 20px;
+  background-color: #3c4493;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
 }
+.log {
+  margin-right: 1100px;
+  cursor: pointer;
+}
+
 .Register {
   background-color: white;
   display: flex;
@@ -154,12 +165,98 @@
   border-radius: 10px;
   padding-right: 30px;
   box-shadow: 0 0 10px rgba(128, 128, 128, 0.719);
+  margin-bottom: 50px;
 }
 .Register form {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
-.Register form input,
+
+.Register form input {
+  background-color: rgba(128, 128, 128, 0.103);
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0px;
+  border: 1px solid #3c4493;
+}
+.Register button {
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px 10px;
+  color: white;
+  background-color: #3c4493;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+.Register button:hover {
+  background-color: #0f1a80;
+  color: white;
+}
+::placeholder {
+  /* color: rgba(255, 255, 255, 0.747); */
+  padding-left: 20px;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+select {
+  padding: 10px 0px;
+  position: fixed;
+  width: 297px;
+  background-color: rgba(128, 128, 128, 0.103);
+  border-radius: 5px;
+  border: 1px solid #3c4493;
+  bottom: 500px;
+}
+.select-selected {
+  background-color: #3c4493;
+  display: flex;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/* .REGLOG {
+  background-color: #2148c0;
+  width: 100%;
+   width: 350px;
+  margin-top: 20px;
+  margin-left: 20px; 
+} */
+/* .Register {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  /* padding-right: 30px; */
+/* box-shadow: 0 0 10px rgba(128, 128, 128, 0.719);
+}  */
+/* .Register form {
+  display: flex;
+  flex-direction: column;
+} */
+/* .Register form input,
 select {
   background-color: rgba(128, 128, 128, 0.103);
   border-radius: 5px;
@@ -167,7 +264,7 @@ select {
   padding: 15px 15px;
   margin-right: 50px;
   /* padding: 10px 40px; */
-}
+/* }
 .register_users h2 {
   margin-top: 20px;
   margin-left: 45px;
@@ -178,8 +275,7 @@ select {
 }
 label {
   margin-left: 15px;
-}
-
+}  */
 .sidebar {
   width: 20%;
   height: 90vh;
@@ -220,4 +316,7 @@ background-color: red;
 
 .welcomeP {
   text-align: center;
+}
+.join {
+  background-color: blue;
 }

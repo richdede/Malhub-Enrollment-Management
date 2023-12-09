@@ -55,7 +55,7 @@ const User = () => {
         </ul>
         <div className="RegLog">
           <Link to="Login">
-            <button className="Login ">Login</button>
+            <button className="Login">Login</button>
           </Link>
           <Link to="Register">
             <button className="Reg">Register</button>
