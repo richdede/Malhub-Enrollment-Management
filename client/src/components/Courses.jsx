@@ -26,7 +26,7 @@ const Courses = () => {
 
   return (
     <div>
-      <h2> My Courses</h2>
+      <h3> My Courses</h3>
       {isLoading ? (
         <div>Fetching registered courses...</div>
       ) : registeredCourses?.length ? (
@@ -64,9 +64,9 @@ const Courses = () => {
         </div>
       ) : (
         <div>
-          <p>You have not registered for any courses.</p>
+          <p className="pargraph">You have not registered for any courses.</p>
           <p>
-            <button className="courseBtn"> <a className="courseLink" href="/CourseReg">Register for a course</a> </button>
+          <a className="courseLink" href="/CourseReg">  <button className="courseBtn"> Register for a course </button></a>
           </p>
         </div>
       )}

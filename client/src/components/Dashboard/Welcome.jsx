@@ -11,8 +11,8 @@ useEffect(() => {
 }, []);
 return (
 <div>
-           <h2 >My Dashboard</h2>
-           {user && <p className="welcomeP">Welcome {user} </p>}
+           <h3 >My Dashboard</h3>
+           {user && <p className="welcomeP">Welcome, <strong>{user}</strong> </p>}
          </div>
 )
 }

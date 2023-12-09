@@ -8,7 +8,7 @@ const Sides = () => {
     const sides = [
         {
             id: 1,
-            name: 'Welcome',
+            name: 'Dashboard',
             path: '/sidebar/welcome',
             icon: '../../Public/dashboards.png'
         },
@@ -34,15 +34,15 @@ const Sides = () => {
 
     return (
         <div className='sides'>
-                <NavLink to= "/"><img className='imag' src={image} alt="logo" style={{ maxWidth: "150px" }} /></NavLink>
-
+                <NavLink to= "/"><img className='imag' src={image} alt="logo" style={{ maxWidth: "120px" }} /></NavLink>
+            <hr />
             <div className="sidelists">
 
                 {
 
                     sides.map((item) => (
                         <NavLink className='list' to={item.path} key={item.id}>
-                            <img src={item.icon} alt="" />
+                            <img  className='icons'  src={item.icon} alt="" />
                             <p>{item.name}</p>
                         </NavLink>
                     ))

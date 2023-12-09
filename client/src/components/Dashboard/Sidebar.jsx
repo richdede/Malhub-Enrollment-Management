@@ -24,10 +24,15 @@ const Sidebar = () => {
   return (
 
     <div className='sidebars'>
+      {/* < aside className='bars'> */}
+        {/* <div className='sider'> */}
       <Sides />
+      {/* </div> */}
+      <div>
       <Outlet />
+      </div>
       {/* <Welcome/> */}
-
+      {/* </aside> */}
     </div>
   )
 }
