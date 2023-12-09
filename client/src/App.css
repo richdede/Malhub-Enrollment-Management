@@ -1,50 +1,7 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
 
-/*.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 .BImg {
   background-image: url(https://malhub.org/wp-content/uploads/2023/10/new-home-hero-image-1.jpg);
   transition: ease-in 5s;
-  /* animation: fadeIn 5s; */
-  /* -webkit-transition: background-img 5s; */
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,9 +94,6 @@
   height: 35vh;
   padding-left: 20px;
 }
-/* .enrollList {
-  color: white;
-} */
 
 .REGLOG {
   background-color: #3c4493;
@@ -207,20 +161,19 @@
   display: none;
   /*hide original SELECT element:*/
 }
-select {
+.custom-sellect select {
   padding: 10px 0px;
   position: fixed;
   width: 297px;
   background-color: rgba(128, 128, 128, 0.103);
   border-radius: 5px;
   border: 1px solid #3c4493;
-  bottom: 500px;
+  bottom: 540px;
 }
 .select-selected {
   background-color: #3c4493;
   display: flex;
 }
-/*style the arrow inside the select element:*/
 .select-selected:after {
   position: absolute;
   content: "";
@@ -235,52 +188,11 @@ select {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
-/* .REGLOG {
-  background-color: #2148c0;
-  width: 100%;
-   width: 350px;
-  margin-top: 20px;
-  margin-left: 20px; 
-} */
-/* .Register {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 10px;
-  /* padding-right: 30px; */
-/* box-shadow: 0 0 10px rgba(128, 128, 128, 0.719);
-}  */
-/* .Register form {
-  display: flex;
-  flex-direction: column;
-} */
-/* .Register form input,
-select {
-  background-color: rgba(128, 128, 128, 0.103);
-  border-radius: 5px;
-  width: 100%;
-  padding: 15px 15px;
-  margin-right: 50px;
-  /* padding: 10px 40px; */
-/* }
-.register_users h2 {
-  margin-top: 20px;
-  margin-left: 45px;
-  padding-left: 13px;
-}
-.Register button {
-  margin-top: 10px;
-}
-label {
-  margin-left: 15px;
-}  */
+
 .sidebar {
   width: 20%;
   height: 90vh;
   padding: 30px 0px 30px 30px;
-  /* background-color: red; */
   border-right: 4px solid black;
   display: flex;
   flex-direction: column;
@@ -295,9 +207,6 @@ label {
   max-width: 5%;
 }
 
-/* ul:first-child{
-background-color: red;
-} */
 .dashboardUl {
   display: flex;
   flex-direction: column;
@@ -306,7 +215,6 @@ background-color: red;
 .dashboardLI {
   display: flex;
   gap: 10px;
-  /* background-color: red; */
 }
 .dashboardLI:hover {
   color: blue;
@@ -318,5 +226,5 @@ background-color: red;
   text-align: center;
 }
 .join {
-  background-color: blue;
+  background-color: blue;
 }
