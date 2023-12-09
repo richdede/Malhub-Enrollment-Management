@@ -43,7 +43,7 @@ const Courses = () => {
       <th>ID</th>
       <th>Name</th>
       <th>Amount</th>
-      <th>Date Created</th>
+      <th>Course Duration</th>
     </tr>
   </thead>
   <tbody>
@@ -64,7 +64,7 @@ const Courses = () => {
         </div>
       ) : (
         <div>
-          <p className="pargraph">You have not registered for any courses.</p>
+          <p className="pargraph">You have not registered for any course.</p>
           <p>
 
           <a className="courseLink" href="/CourseReg">  <button className="courseBtn"> Register for a course </button></a>

@@ -37,7 +37,9 @@
     width: 20px;
 }
 
-
+.icons{
+  filter: saturate(3);
+}
 
 .containe{
   /* overflow-y: hidden; */
@@ -65,7 +67,7 @@
     color: white;
     border-radius: 4px;
 background-color: #6066a5;
-  width: 79vw;
+  width: 77vw;
 }
 .navBar h1{
   position: relative;
@@ -78,8 +80,11 @@ background-color: #6066a5;
 .courseLink{
     color: white;
 }
-.courseBtn {
+.courseBtn{
   margin-top: 20px;
+
+}
+button {
   padding: 10px 15px;
   background-color: #6066a5;
   color: white;
@@ -87,7 +92,7 @@ background-color: #6066a5;
   border-radius: 5px;
   cursor: pointer;
 }
-.courseBtn:hover{
+button:hover{
   background-color: #3c4493;
 }
 .courseLink {

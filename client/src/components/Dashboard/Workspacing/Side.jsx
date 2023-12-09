@@ -3,7 +3,6 @@ import React from 'react'
 import './Home.css'
 import { Link, NavLink } from 'react-router-dom';
 const image = "/Malhub-logo.png";
-import Home from '../pages/Home/Home';
 
 const Sides = () => {
   const sides = [
@@ -31,12 +30,6 @@ const Sides = () => {
       path: "payment",
       icon: "../../Public/transaction-history.png",
     },
-    {
-      id: 4,
-      name: "logout",
-      path: "/sidebar/Home",
-      icon: "../../Public/icons8-logout-rounded-50.png",
-    }
   ];
 
 
