@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Home.css";
 
@@ -76,6 +76,11 @@ const Courses = () => {
                 Register for a course
               </a>{" "}
             </button>
+            <a className="courseLink" href="/CourseReg">
+              {" "}
+              <button className="courseBtn"> Register for a course </button>
+            </a>
+
             <a className="courseLink" href="/CourseReg">
               {" "}
               <button className="courseBtn"> Register for a course </button>

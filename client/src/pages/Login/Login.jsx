@@ -3,8 +3,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { MdAlternateEmail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
+// import { MdAlternateEmail } from "react-icons/md";
+// import { RiLockPasswordFill } from "react-icons/ri";
 const logo = "Malhub-logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -54,33 +54,29 @@ const Login = () => {
           />
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
-            <input
-              {...register("email", { required: "email is required" })}
-              value={email}
-              placeholder="Email Addrss"
-              onChange={(e) => setEmail(e.target.value)}
-              style={{ marginLeft: "12px" }}/>
-            {errors.email && <p>{errors.email.message}</p>}
-          <span>
-            <RiLockPasswordFill
-              style={{ position: "relative", left: "16px", top: "33px" }}
-            />
-            <input
-              {...register("password", { required: "password is required" })}
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="User Password"
-              style={{ marginLeft: "12px" }}
-            />
-            {errors.password && <p>{errors.password.message}</p>}
-          </span>
+          <label htmlFor="email">Email</label>
+          <input
+            {...register("email", { required: "email is required" })}
+            value={email}
+            placeholder="Email Addrss"
+            onChange={(e) => setEmail(e.target.value)}
+            style={{ marginLeft: "12px" }}
+          />
+          {errors.email && <p>{errors.email.message}</p>}
+          <label htmlFor="password">Password</label>
+          <input
+            {...register("password", { required: "password is required" })}
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="User Password"
+            style={{ marginLeft: "12px" }}
+          />
+          {errors.password && <p>{errors.password.message}</p>}
           <button
             type="submit"
             disabled={loading}
-            style={{
-              marginLeft: "12px",
-            }}
+            style={{ marginLeft: "20px" }}
           >
             Login Now
           </button>

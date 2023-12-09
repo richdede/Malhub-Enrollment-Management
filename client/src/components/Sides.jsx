@@ -1,4 +1,3 @@
-import React from 'react'
 import './Home.css'
 import { Link, NavLink } from 'react-router-dom';
 const image = "/Malhub-logo.png";
@@ -50,5 +49,4 @@ const Sides = () => {
     )
 }
 
-export default Sides
-
+export default Sides;

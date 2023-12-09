@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-
-import Sides from "../Sides";
-import './CourseReg.css';
+// import Sides from "../Sides";
+import "./CourseReg.css";
 
 const RegistrationForm = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [courses, setCourses] = useState();
   const [formData, setFormData] = useState({
     selectedCourse: "",
@@ -60,10 +59,12 @@ const RegistrationForm = () => {
       let amount = response?.data?.data?.enrollment?.payment?.amount;
 
       if (amount) {
-        alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`);
-        toast.success('Registration successful');
+        alert(
+          `Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`
+        );
+        toast.success("Registration successful");
       } else {
-        toast.error('You have been enrolled to this course.');
+        toast.error("You have been enrolled to this course.");
       }
 
       setFormData({
@@ -72,20 +73,18 @@ const RegistrationForm = () => {
       });
 
       navigate("/sidebar/courses");
-
-    }
-     catch (error) {
+    } catch (error) {
       console.error("Error registering:", error.response?.data);
-      toast.error("Error registering. Please check the console for more details.");
-
+      toast.error(
+        "Error registering. Please check the console for more details."
+      );
     }
   };
 
   return (
     <div>
       <div className="container">
-        <div className="side">
-        </div>
+        <div className="side"></div>
         <div className="courseForm">
           <h2>Course Registration Form</h2>
           <form onSubmit={handleSubmit}>

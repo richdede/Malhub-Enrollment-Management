@@ -1,0 +1,142 @@
+.REGLOG {
+  background-color: #3c4493;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.log {
+  position: fixed;
+  /* margin-right: 900px; */
+  top: 0px;
+  left: 0;
+  cursor: pointer;
+}
+.REGLOG label {
+  margin-left: 20px;
+}
+
+.Register {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding-right: 30px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.719);
+  margin-bottom: 20px;
+}
+.Register form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.Register form input {
+  background-color: rgba(128, 128, 128, 0.103);
+  border: 1px solid #3c4493;
+  border-radius: 5px;
+  padding: 10px 0px;
+  margin-left: 20px;
+}
+.Register button {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background-color: #3c4493;
+  border-radius: 10px; /* display: flex;
+  align-items: flex-end; */
+}
+.Register button:hover {
+  background-color: #0f1a80;
+  color: white;
+}
+::placeholder {
+  /* color: rgba(255, 255, 255, 0.747); */
+  padding-left: 20px;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+.select {
+  /* padding: 10px 10px; */
+  /* position: fixed; */
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.103);
+  border-radius: 5px;
+  border: 1px solid #3c4493;
+  padding: 10px 0px;
+}
+.select-selected {
+  background-color: #3c4493;
+  display: flex;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+.sidebar {
+  width: 20%;
+  height: 90vh;
+  padding: 30px 0px 30px 30px;
+  /* background-color: red; */
+  border-right: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+.logo {
+  max-width: 5%;
+}
+
+/* ul:first-child{
+  background-color: red;
+  } */
+.dashboardUl {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.dashboardLI {
+  display: flex;
+  gap: 10px;
+  /* background-color: red; */
+}
+.dashboardLI:hover {
+  color: blue;
+  background-color: powderblue;
+  cursor: pointer;
+}
+
+.welcomeP {
+  text-align: center;
+}
+.join {
+  background-color: blue;
+}
