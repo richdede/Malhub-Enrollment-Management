@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use App\Models\User;
 use App\Models\Course;
+use App\Models\Payment;
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
 use App\Models\Workspacepackage;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Payment;
+
 
 class CourseUserController extends Controller
 {
@@ -56,7 +59,6 @@ class CourseUserController extends Controller
     public function enrollUserInWorkspacePackage(Request $request, $workspacepackageId, $userId)
     {
 
-        $enrollment = new Enrollment();
         $check = Enrollment::where([
             'user_id' => $userId,
             'workspacepackage_id' => $workspacepackageId,
@@ -67,11 +69,33 @@ class CourseUserController extends Controller
             'message' => 'You have been subscribed to this package.'
         ]);
 
-        $enrollment->user_id = $userId;
-        $enrollment->workspacepackage_id = $workspacepackageId;
-        $enrollment->save();
+        $workspacepackage = Workspacepackage::where('id', $workspacepackageId)->first();
 
-        return response()->json(['message' => 'User subscribed in the workspace package successfully']);
+        if (!$workspacepackage) return response()->json([
+            'success' => false,
+            'message' => "Invalid workspace Package selected"
+        ]);
+
+        $enrollment = Enrollment::create([
+            'user_id' => $userId,
+            'workspacepackage_id' => $workspacepackageId,
+        ]);
+
+        $payment = Payment::create([
+            'enrollment_id' => $enrollment->id,
+            'amount' => $workspacepackage->amount,
+            'status' => 'pending',
+            'time_initiated' => now()
+        ]);
+
+        $data['enrollment'] = $enrollment;
+        $data['enrollment']['payment'] = $payment;
+
+        return response()->json([
+            'data' => $data,
+            'message' => 'User subscribed in the workspace package successfully'
+        ]);
+
     }
 
 
@@ -126,4 +150,47 @@ class CourseUserController extends Controller
 
         return response()->json(['workspacePackages' => $workspacePackages]);
     }
+
+
+    public function markPaymentAsPaid(Request $request, $paymentId)
+    {
+        try {
+            DB::beginTransaction();
+    
+            $payment = Payment::find($paymentId);
+   
+            if (!$payment) {
+                DB::rollBack();
+                return response()->json(['message' => 'Payment not found'], 404);
+            }
+    
+            if ($payment->status !== 'pending') {
+                DB::rollBack();
+                return response()->json(['message' => 'Payment has already been processed'], 400);
+            }
+    
+            $isPaymentSuccessful = true;
+    
+            if ($isPaymentSuccessful) {
+                $payment->update([
+                    'status' => 'paid',
+                    'time_completed' => now(),
+                ]);
+    
+                DB::commit();
+    
+                return response()->json(['success' => true, 'message' => 'Payment marked as paid']);
+            } else {
+                DB::rollBack();
+                return response()->json(['success' => false, 'message' => 'Payment failed'], 500);
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error($e);
+    
+            return response()->json(['success' => false, 'message' => 'Error marking payment as paid'], 500);
+        }
+    }
+
+
 }
