@@ -11,7 +11,7 @@ const Workspace = () => {
       var userId = localStorage.getItem("userId");
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/users/" + userId + "/Workspace"
+          "http://127.0.0.1:8000/api/users/" + userId + "/workspace"
         );
         setRegisteredWorkspace(response.data.Workspace);
         setIsLoading(false);

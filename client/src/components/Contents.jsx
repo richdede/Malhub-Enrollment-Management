@@ -9,7 +9,9 @@ const Contents = ({details}) => {
 
         {/* <Welcome/> */}
        {/* <h1>welcome</h1> */}
-       <div className='container'>
+
+       <div className='containe'>
+        <nav className='navBar'><h1>Dashboard</h1></nav>
     <div className='contents'>{details}</div>
     </div>
   </>

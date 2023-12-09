@@ -1,15 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import './Dashboard.css'
-
-// const Header = () => {
-//     return (
-//         <header>
-//             <h1>welcome </h1>
-//         </header>
-//     );
-// };
-// export default Header;div>
 const Welcome = () => {
 
 const [user, setUser] = useState(null)
@@ -20,9 +11,8 @@ useEffect(() => {
 }, []);
 return (
 <div>
-           <h2 >My Dashboard</h2>
-           {/* <p className="welcomeP">Welcome</p> */}
-           {user && <p className="welcomeP">Welcome {user} </p>}
+           <h3 >My Dashboard</h3>
+           {user && <p className="welcomeP">Welcome, <strong>{user}</strong> </p>}
          </div>
 )
 }
