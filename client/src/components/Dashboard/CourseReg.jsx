@@ -64,7 +64,7 @@ const RegistrationForm = () => {
         alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`);
         toast.success('Registration successful');
       } else {
-        toast.error('Error in response structure. Could not retrieve payment amount.');
+        toast.error('You have registered for this course before');
       }
 
       setFormData({
@@ -74,7 +74,8 @@ const RegistrationForm = () => {
 
       navigate("/courses");
 
-    } catch (error) {
+    }
+     catch (error) {
       console.error("Error registering:", error.response?.data);
       toast.error("Error registering. Please check the console for more details.");
     }
