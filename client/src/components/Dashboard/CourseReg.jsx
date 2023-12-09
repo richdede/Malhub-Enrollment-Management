@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-
 import Sides from "../Sides";
 import './CourseReg.css';
 
@@ -51,7 +50,6 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     var userId = localStorage.getItem("userId");
-
     try {
       const response = await axios.post(
         `http://127.0.0.1:8000/api/courses/${formData.selectedCourse}/users/${userId}/enroll`,

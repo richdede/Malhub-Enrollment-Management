@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './Home.css';
+import "./Home.css";
 
 const Courses = () => {
   const [registeredCourses, setRegisteredCourses] = useState([]);
@@ -66,7 +66,9 @@ const Courses = () => {
         <div>
           <p className="pargraph">You have not registered for any courses.</p>
           <p>
+
           <a className="courseLink" href="/CourseReg">  <button className="courseBtn"> Register for a course </button></a>
+
           </p>
         </div>
       )}

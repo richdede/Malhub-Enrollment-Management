@@ -3,7 +3,10 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-
+import { MdAlternateEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { FaHome } from "react-icons/fa";
+const logo = "Malhub-logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,29 +48,51 @@ const Login = () => {
     <div className="REGLOG">
       <div className="Register">
         <div className="register_users">
-          <h2>Sign up and start learning</h2>
+          <img
+            src={logo}
+            alt="logo"
+            style={{ width: "100px", paddingTop: "30px" }}
+          />
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
-          <label htmlFor="email">Email</label>
-          <input
-            {...register("email", { required: "email is required" })}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          {errors.email && <p>{errors.email.message}</p>}
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            {...register("password", { required: "password is required" })}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {errors.password && <p>{errors.password.message}</p>}
-          <button type="submit" disabled={loading}>
+          <span>
+            <MdAlternateEmail
+              style={{ position: "relative", left: "16px", top: "33px" }}
+            />
+            <input
+              {...register("email", { required: "email is required" })}
+              value={email}
+              placeholder="Email Addrss"
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ marginLeft: "12px" }}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
+          </span>
+          <span>
+            <RiLockPasswordFill
+              style={{ position: "relative", left: "16px", top: "33px" }}
+            />
+            <input
+              type="password"
+              {...register("password", { required: "password is required" })}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="User Password"
+              style={{ marginLeft: "12px" }}
+            />
+            {errors.password && <p>{errors.password.message}</p>}
+          </span>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              marginLeft: "12px",
+            }}
+          >
             Login Now
           </button>
-          <span style={{ textAlign: "center", marginTop: "10px" }}>
-            or <Link to="/register">Register</Link>
+          <span style={{ marginTop: "15px", marginLeft: "200px" }}>
+            Or <Link to="/register">Register</Link>
           </span>
         </form>
       </div>

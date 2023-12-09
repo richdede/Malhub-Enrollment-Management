@@ -216,6 +216,8 @@ a {
   transition: transform 0.2s;
   display: flex;
   cursor: pointer;
+  border-radius: 10px;
+  padding: 18px;
 }
 /* landing page */
 .landing .us {
@@ -291,12 +293,18 @@ button {
   display: flex;
   cursor: pointer;
   border: 5px solid white;
-  background-color: #711d95;
+  background-color: #3c4493;
   color: white;
 }
+.sub {
+  background-color: #3c4493;
+}
+.sub:hover {
+  background-color: #0f1a80;
+}
 button:hover {
-  background-color: white;
-  color: blue;
+  background-color: #0f1a80;
+  color: white;
   transition: 0.5s ease;
 }
 .EMS {

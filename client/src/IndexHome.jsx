@@ -1,11 +1,10 @@
-import LandingLand from "./components/Landing/LandingLand";
 import User from "./pages/User/User";
-
+import LandingLand from "./components/Landing/LandingLand";
 const IndexHome = () => {
   return (
     <div>
-      <User/>
       {" "}
+      <User />
       <LandingLand />
     </div>
   );
