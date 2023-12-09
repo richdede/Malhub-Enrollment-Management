@@ -85,11 +85,14 @@ const RegistrationForm = () => {
         <div className="side">
           <Sides />
         </div>
+        <div className="content">
+        <nav className='navBar'><h1>Dashboard</h1></nav>
+
         <div className="courseForm">
           <h2>Course Registration Form</h2>
           <form onSubmit={handleSubmit}>
-            <label>
-              Select Course:
+            <label className="label">
+              Select Course: 
               <select
                 name="selectedCourse"
                 value={formData.selectedCourse}
@@ -113,8 +116,9 @@ const RegistrationForm = () => {
               </select>
             </label>
             <br />
-            <button type="submit">Register</button>
+            <button className="reg" type="submit">Register</button>
           </form>
+          </div>
         </div>
       </div>
     </div>

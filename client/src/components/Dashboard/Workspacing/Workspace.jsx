@@ -1,47 +1,74 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./WorkspaceReg";
 
-const Workspace = () => {
-  const [registeredWorkspace, setRegisteredWorkspace] = useState([]);
+const Courses = () => {
+  const [registeredCourses, setRegisteredCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    const fetchRegisteredWorkspace = async () => {
+    const fetchRegisteredCourses = async () => {
       var userId = localStorage.getItem("userId");
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/users/" + userId + "/workspace"
+          "http://127.0.0.1:8000/api/users/" + userId + "/workspace-packages"
         );
-        setRegisteredWorkspace(response.data.Workspace);
+        setRegisteredCourses(response.data.courses);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
       }
     };
 
-    fetchRegisteredWorkspace();
+    fetchRegisteredCourses();
   }, []); // Run only once on component mount
 
   return (
     <div>
-      <h2>Workspace</h2>
+      <h3> My Workspaces</h3>
       {isLoading ? (
-        <div>Fetching registered Workspace...</div>
-      ) : registeredWorkspace?.length ? (
+        <div>Fetching registered Workspaces...</div>
+      ) : registeredCourses?.length ? (
         <div>
-          <h3>Registered Workspace:</h3>
-          <ul>
-            {registeredWorkspace.map(function (course) {
+          <h3>Registered  Workspaces:</h3>
+          {/* <ul>
+            {registeredCourses.map(function (course) {
               return <li key={course.id}>{course.name}</li>;
             })}
-          </ul>
+          </ul> */}
+          <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Workspace Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {registeredCourses.map(function (course) {
+      return (
+        <tr key={course.id}>
+          <td>{course.id}</td>
+          <td>{course.name}</td>
+          <td>{course.amount}</td>
+          <td>{course.duration}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+<button className="courseBtn"> <a className="courseLink" href="/WorkspaceReg">Register for a workspace</a> </button>
+
         </div>
       ) : (
         <div>
-          <p>You have not registered for any Workspace.</p>
+          <p className="pargraph">You have not registered for any workspace.</p>
           <p>
-            <a href="/workspaceReg">Register for Workspace</a>
+
+          <a className="courseLink" href="/WorkspaceReg">  <button className="courseBtn"> Register for a workspace </button></a>
+
           </p>
         </div>
       )}
@@ -49,4 +76,4 @@ const Workspace = () => {
   );
 };
 
-export default Workspace;
+export default Courses;
