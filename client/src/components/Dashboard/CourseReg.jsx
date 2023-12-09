@@ -64,7 +64,7 @@ const RegistrationForm = () => {
         alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`);
         toast.success('Registration successful');
       } else {
-        toast.error('You have registered for this course before');
+        toast.error('You have been enrolled to this course.');
       }
 
       setFormData({
@@ -72,7 +72,7 @@ const RegistrationForm = () => {
         courseName: "",
       });
 
-      navigate("/courses");
+      navigate("/sidebar/courses");
 
     }
      catch (error) {
