@@ -125,6 +125,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom"; 
 
+
 import Sides from "../Sides";
 import './CourseReg.css';
 
@@ -184,7 +185,7 @@ const RegistrationForm = () => {
         selectedCourse: "",
       });
 
-      navigate("/courses");
+      navigate("/sidebar/courses");
 
     } catch (error) {
       console.error("Error registering:", error.response.data);
@@ -225,9 +226,7 @@ const RegistrationForm = () => {
               </select>
             </label>
             <br />
-            <Link to="courses">
               <button type="submit">Register</button>
-            </Link>
           </form>
         </div>
       </div>
