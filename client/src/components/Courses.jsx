@@ -59,7 +59,8 @@ const Courses = () => {
     })}
   </tbody>
 </table>
-<button className="courseBtn"> <a className="courseLink" href="/CourseReg">Register for a course</a> </button>
+<button className="courseBtn"> 
+<a className="courseLink" href="/CourseReg">Register for a course</a> </button>
 
         </div>
       ) : (

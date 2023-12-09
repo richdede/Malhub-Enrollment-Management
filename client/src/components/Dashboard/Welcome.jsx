@@ -12,7 +12,7 @@ useEffect(() => {
 return (
 <div>
            <h3 >My Dashboard</h3>
-           {user && <p className="welcomeP">Welcome, <strong>{user}!!!!</strong> </p>}
+           {user && <p className="welcomeP">Welcome, <strong>{user}!</strong> </p>}
          </div>
 )
 }

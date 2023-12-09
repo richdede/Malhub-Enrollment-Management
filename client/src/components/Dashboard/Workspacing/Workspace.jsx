@@ -1,74 +1,71 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./WorkspaceReg";
+import "./home.css";
 
-const Courses = () => {
-  const [registeredCourses, setRegisteredCourses] = useState([]);
+const Workspace = () => {
+  const [workspaces, setWorkspaces] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    const fetchRegisteredCourses = async () => {
+    const fetchWorkspaces = async () => {
       var userId = localStorage.getItem("userId");
+
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/users/" + userId + "/workspace-packages"
+          "http://127.0.0.1:8000/api/users " + userId +"/workspace-packages"
         );
-        setRegisteredCourses(response.data.courses);
+        setWorkspaces(response.data.workspaces);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
       }
     };
 
-    fetchRegisteredCourses();
+    fetchWorkspaces();
   }, []); // Run only once on component mount
 
   return (
     <div>
       <h3> My Workspaces</h3>
       {isLoading ? (
-        <div>Fetching registered Workspaces...</div>
-      ) : registeredCourses?.length ? (
+        <div>Fetching workspaces...</div>
+      ) : workspaces?.length ? (
         <div>
-          <h3>Registered  Workspaces:</h3>
-          {/* <ul>
-            {registeredCourses.map(function (course) {
-              return <li key={course.id}>{course.name}</li>;
-            })}
-          </ul> */}
+          <h3>Available Workspaces:</h3>
           <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Workspace Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-    {registeredCourses.map(function (course) {
-      return (
-        <tr key={course.id}>
-          <td>{course.id}</td>
-          <td>{course.name}</td>
-          <td>{course.amount}</td>
-          <td>{course.duration}</td>
-        </tr>
-      );
-    })}
-  </tbody>
-</table>
-<button className="courseBtn"> <a className="courseLink" href="/WorkspaceReg">Register for a workspace</a> </button>
-
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Course Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              {workspaces.map((workspace) => (
+                <tr key={workspace.id}>
+                  <td>{workspace.id}</td>
+                  <td>{workspace.name}</td>
+                  <td>{workspace.amount}</td>
+                   <td>{workspace.duration}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button className="workspaceBtn">
+            <a className="workspaceLink" href="/WorkspaceReg">
+              Create a new workspace
+            </a>
+          </button>
         </div>
       ) : (
         <div>
-          <p className="pargraph">You have not registered for any workspace.</p>
+          <p className="paragraph">You have not created any workspaces.</p>
           <p>
-
-          <a className="courseLink" href="/WorkspaceReg">  <button className="courseBtn"> Register for a workspace </button></a>
-
+            <a className="workspaceLink" href="/WorkspaceReg">
+              <button className="workspaceBtn">Create a new workspace</button>
+            </a>
           </p>
         </div>
       )}
@@ -76,4 +73,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Workspace;

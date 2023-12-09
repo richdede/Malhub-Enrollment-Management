@@ -1,42 +1,42 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Side from "./Side";
-import '../CourseReg.css';
+import '../CourseReg.css'; // Assuming you have a corresponding CSS file
 
-const RegistrationForm = () => {
-  const navigate = useNavigate(); 
-  const [courses, setCourses] = useState();
+const WorkspaceRegistrationForm = () => {
+  const navigate = useNavigate();
+  const [workspaces, setWorkspaces] = useState();
   const [formData, setFormData] = useState({
-    selectedCourse: "",
-    courseName: "",
+    selectedWorkspace: "",
+    workspaceName: "",
   });
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchWorkspaces = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/api/workspace-packages");
-        setCourses(response.data);
+        setWorkspaces(response.data);
       } catch (error) {
         console.error("Error fetching workspaces:", error);
       }
     };
 
-    fetchCourses();
+    fetchWorkspaces();
   }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (name === "selectedCourse") {
-      const [courseId, courseName] = value.split("-");
-      if (courseId === formData.selectedCourse) {
-        toast.error("You can't pick the same course.");
+    if (name === "selectedWorkspace") {
+      const [workspaceId, workspaceName] = value.split("-");
+      if (workspaceId === formData.selectedWorkspace) {
+        toast.error("You can't pick the same workspace.");
       } else {
         setFormData({
           ...formData,
-          selectedCourse: courseId,
-          courseName: courseName,
+          selectedWorkspace: workspaceId,
+          workspaceName: workspaceName,
         });
       }
     } else {
@@ -52,7 +52,7 @@ const RegistrationForm = () => {
     var userId = localStorage.getItem("userId");
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8000/api/workspacepackages/${formData.selectedCourse}/users/${userId}/enroll`,
+        `http://127.0.0.1:8000/api/workspacepackages/${formData.selectedWorkspace}/users/${userId}/enroll`,
         formData
       );
 
@@ -66,14 +66,13 @@ const RegistrationForm = () => {
       }
 
       setFormData({
-        selectedCourse: "",
-        courseName: "",
+        selectedWorkspace: "",
+        workspaceName: "",
       });
 
-      navigate("/sidebar/workspace");
+      navigate("/sidebar/workspaces");
 
-    }
-     catch (error) {
+    } catch (error) {
       console.error("Error registering:", error.response?.data);
       toast.error("Error registering. Please check the console for more details.");
     }
@@ -86,38 +85,38 @@ const RegistrationForm = () => {
           <Side />
         </div>
         <div className="content">
-        <nav className='navBar'><h1>Dashboard</h1></nav>
+          <nav className='navBar'><h1>Dashboard</h1></nav>
 
-        <div className="courseForm">
-          <h2>  Workspace Registration Form</h2>
-          <form onSubmit={handleSubmit}>
-            <label className="label">
-              Select Workspace: 
-              <select
-                name="selectedCourse"
-                value={formData.selectedCourse}
-                onChange={handleInputChange}
-                required
-              >
-                <option value="" disabled>
-                  Select a workspace
-                </option>
-                {courses ? (
-                  courses.map((course) => (
-                    <option key={course.id} value={course?.id}>
-                      {course?.name} - {course.amount}
-                    </option>
-                  ))
-                ) : (
+          <div className="workspaceForm">
+            <h2>Workspace Registration Form</h2>
+            <form onSubmit={handleSubmit}>
+              <label className="label">
+                Select Workspace:
+                <select
+                  name="selectedWorkspace"
+                  value={formData.selectedWorkspace}
+                  onChange={handleInputChange}
+                  required
+                >
                   <option value="" disabled>
-                    Loading workspaces...
+                    Select a workspace
                   </option>
-                )}
-              </select>
-            </label>
-            <br />
-            <button className="reg" type="submit">Register</button>
-          </form>
+                  {workspaces ? (
+                    workspaces.map((workspace) => (
+                      <option key={workspace.id} value={workspace?.id}>
+                        {workspace?.name} - {workspace.amount}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="" disabled>
+                      Loading workspaces...
+                    </option>
+                  )}
+                </select>
+              </label>
+              <br />
+              <button className="reg" type="submit">Register</button>
+            </form>
           </div>
         </div>
       </div>
@@ -125,4 +124,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default WorkspaceRegistrationForm;

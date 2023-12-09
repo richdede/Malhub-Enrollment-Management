@@ -20,6 +20,7 @@ import CourseReg from "./components/Dashboard/CourseReg";
 import WorkspaceReg from "./components/Dashboard/Workspacing/WorkspaceReg";
 import Welcome from "./components/Dashboard/Welcome";
 import PaymentHistory from "./components/Dashboard/PaymentHistory";
+import { AuthProvider } from "./components/auth/LogAuth";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");

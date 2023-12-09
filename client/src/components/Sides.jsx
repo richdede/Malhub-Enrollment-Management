@@ -32,9 +32,9 @@ const Sides = () => {
       icon: "../../Public/transaction-history.png",
     },
     {
-      id: 4,
+      id: 5,
       name: "logout",
-      path: "/sidebar/Home",
+      path: "/",
       icon: "../../Public/icons8-logout-rounded-50.png",
     }
   ];
