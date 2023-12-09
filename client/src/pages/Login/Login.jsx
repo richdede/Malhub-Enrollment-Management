@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { FaHome } from "react-icons/fa";
 const logo = "Malhub-logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -55,26 +54,20 @@ const Login = () => {
           />
         </div>
         <form onSubmit={handleSubmit(handleLogin)}>
-          <span>
-            <MdAlternateEmail
-              style={{ position: "relative", left: "16px", top: "33px" }}
-            />
             <input
               {...register("email", { required: "email is required" })}
               value={email}
               placeholder="Email Addrss"
               onChange={(e) => setEmail(e.target.value)}
-              style={{ marginLeft: "12px" }}
-            />
+              style={{ marginLeft: "12px" }}/>
             {errors.email && <p>{errors.email.message}</p>}
-          </span>
           <span>
             <RiLockPasswordFill
               style={{ position: "relative", left: "16px", top: "33px" }}
             />
             <input
-              type="password"
               {...register("password", { required: "password is required" })}
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="User Password"

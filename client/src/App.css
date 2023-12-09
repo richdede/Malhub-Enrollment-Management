@@ -207,7 +207,7 @@
   display: none;
   /*hide original SELECT element:*/
 }
-select {
+.custom-sellec select {
   padding: 10px 0px;
   position: fixed;
   width: 297px;
