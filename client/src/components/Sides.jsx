@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import { Link, NavLink } from 'react-router-dom';
-const image = "Malhub-logo.png";
+const image = "/Malhub-logo.png";
 
 const Sides = () => {
 
@@ -34,7 +34,7 @@ const Sides = () => {
 
     return (
         <div className='sides'>
-                <img className='imag' src={image} alt="logo" style={{ maxWidth: "150px" }} />
+                <NavLink to= "/"><img className='imag' src={image} alt="logo" style={{ maxWidth: "150px" }} /></NavLink>
 
             <div className="sidelists">
 

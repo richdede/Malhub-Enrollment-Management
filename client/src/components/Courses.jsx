@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Home.css';
-// import "./"
 
 const Courses = () => {
   const [registeredCourses, setRegisteredCourses] = useState([]);
