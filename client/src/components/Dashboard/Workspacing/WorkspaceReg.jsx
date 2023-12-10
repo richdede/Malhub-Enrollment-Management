@@ -89,17 +89,17 @@ const WorkspaceRegistrationForm = () => {
 <br /> <br />
           <div className="workspaceForm">
             <h2>Workspace Registration Form</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}> 
               <label className="label">
-                Select Workspace:
+                Select a Workspace Package:
                 <select
                   name="selectedWorkspace"
                   value={formData.selectedWorkspace}
                   onChange={handleInputChange}
                   required
-                >
+                > 
                   <option value="" disabled>
-                    Select a workspace
+                    Select a Workspace Package 
                   </option>
                   {workspaces ? (
                     workspaces.map((workspace) => (
