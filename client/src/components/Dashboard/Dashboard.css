@@ -12,25 +12,9 @@
 }
 .bars{
     display: flex;
-    /* gap: 300px; */
-    /* width: 16%; */
-    
     background-color: white;
-    /* padding: 10px; */
-    /* background-color: #3c4493; */
-    /* background-color: red; */
-    /* gap: 0; */
-    /* align-items: center; */
 }
-/* .side{
-    width: 50%;
-    background-color: red;
-} */
-/* .sider{
-    width: 10%;
-    background-color: red;
-}
- */
+
 h3{
     font-weight: 600;
 }
@@ -40,12 +24,6 @@ h3{
     /* display: flex; */
     /* justify-content: space-between; */
 }
-/* .courseForm{
-    background-color: blue; 
-} */
-    /* width: 10%;
-}
-
 /* welcome page css */
 
 .welcomeP{

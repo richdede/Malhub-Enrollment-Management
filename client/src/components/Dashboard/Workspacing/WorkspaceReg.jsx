@@ -3,8 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Side from "./Side";
-import '../CourseReg.css'; // Assuming you have a corresponding CSS file
-
+import '../CourseReg.css'; 
 const WorkspaceRegistrationForm = () => {
   const navigate = useNavigate();
   const [workspaces, setWorkspaces] = useState();
@@ -62,7 +61,7 @@ const WorkspaceRegistrationForm = () => {
         alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`);
         toast.success('Registration successful');
       } else {
-        toast.error('You have been enrolled to this workspace.');
+        toast.error('You have been subscribed to this workspace package.');
       }
 
       setFormData({
@@ -70,7 +69,7 @@ const WorkspaceRegistrationForm = () => {
         workspaceName: "",
       });
 
-      navigate("/sidebar/workspaces");
+      navigate("/sidebar/workspace");
 
     } catch (error) {
       console.error("Error registering:", error.response?.data);
@@ -79,7 +78,7 @@ const WorkspaceRegistrationForm = () => {
   };
 
   return (
-    <div>
+    <div> 
       <div className="container">
         <div className="side">
           <Side />
@@ -87,19 +86,21 @@ const WorkspaceRegistrationForm = () => {
         <div className="content">
           <nav className='navBar'><h1>Dashboard</h1></nav>
 
-          <div className="courseForm">
-            <h3>Workspace Registration Form</h3>
-            <form onSubmit={handleSubmit}>
-              <label className="label">
-                <strong> Select Workspace:</strong>
-                <select className="select"
+<br /> <br />
+          <div className="workspaceForm">
+            <h2>Workspace Registration Form</h2>
+            <form onSubmit={handleSubmit}> 
+              <label className="label" style={{ padding:"10px", fontSize:"20px", fontWeight:"bold"}} >
+                Select a Workspace Package:
+                <select
+                  style={{ padding:"10px", fontSize:"20px"}}
                   name="selectedWorkspace"
                   value={formData.selectedWorkspace}
                   onChange={handleInputChange}
                   required
-                >
+                > 
                   <option value="" disabled>
-                    Select a workspace
+                    Select a Workspace Package 
                   </option>
                   {workspaces ? (
                     workspaces.map((workspace) => (
@@ -115,7 +116,7 @@ const WorkspaceRegistrationForm = () => {
                 </select>
               </label>
               <br />
-              <button className="reg" type="submit">Register</button>
+              <button className="reg" style={{ padding:"10px", fontSize:"20px", fontWeight:"bolder"}}  type="submit">Subcribe Now</button>
             </form>
           </div>
         </div>

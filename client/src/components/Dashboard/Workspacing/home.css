@@ -37,7 +37,9 @@
       width: 20px;
   }
   
-  
+  .workspaceLink{
+    color: white;
+  }
   
   .containe{
     /* overflow-y: hidden; */
