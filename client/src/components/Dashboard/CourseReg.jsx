@@ -139,7 +139,6 @@ const RegistrationForm = () => {
               >
                 Enroll Now
               </button>
-            </form>
           </div>
         </div>
       </div>

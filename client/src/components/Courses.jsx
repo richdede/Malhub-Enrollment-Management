@@ -26,7 +26,7 @@ const Courses = () => {
 
   return (
     <div>
-      <h3> My Courses</h3> <br />
+      <h2 style={{ fontSize:"22px"}}> My Courses</h2> <br />
       {isLoading ? (
         <div>Fetching registered courses...</div>
       ) : registeredCourses?.length ? (
@@ -81,6 +81,9 @@ const Courses = () => {
               {" "}
               <button className="courseBtn"> Enroll Now </button>
             </a>
+
+          <a className="courseLink" href="/CourseReg">  <button className="courseBtn" style={{ padding:"10px", fontSize:"18px", fontWeight:"bolder"}}  > Enroll Now </button></a>
+
           </p>
         </div>
       )}

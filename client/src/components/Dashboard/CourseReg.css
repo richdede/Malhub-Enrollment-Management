@@ -12,34 +12,26 @@
 
 } 
 .sidebars{
-    /* background-color: lightblue; */
 }
 .container{
     height: 100vh;
-    background-color:lightblue;
+    background-color: #B0C4DE;
     overflow: hidden;
 }
  .courseForm{
-    /* background-color: lightblue; */
-    /* overflow-x: hidden; */
     position: relative;
     top: 30px;
     height: 1vh;
-    /* background-color:white;  */
     width:75%;
     padding:16px 10px;
-    /* background-color: red; */
 } 
 .content{
-    /* background-color: red; */
 
     height: 70vh;
     position: relative;
     top: 35px;
-    /* overflow: hidden; */
 }
 .label{
-    /* background-color: red; */
   position: relative;
   top: 8px;
 }

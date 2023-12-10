@@ -80,7 +80,7 @@ const WorkspaceRegistrationForm = () => {
   return (
     <div> 
       <div className="container">
-        <div className="side">
+        <div className="side" style={{ fontSize:"16px", fontWeight:"650"}}>
           <Side />
         </div>
         <div className="content">
@@ -104,8 +104,8 @@ const WorkspaceRegistrationForm = () => {
                   </option>
                   {workspaces ? (
                     workspaces.map((workspace) => (
-                      <option key={workspace.id} value={workspace?.id}>
-                        {workspace?.name} - {workspace.amount}
+                      <option key={workspace.id} value={workspace?.id}  >
+                        {workspace?.name} - {workspace.amount} -  {workspace.days}
                       </option>
                     ))
                   ) : (
@@ -116,7 +116,7 @@ const WorkspaceRegistrationForm = () => {
                 </select>
               </label>
               <br />
-              <button className="reg" style={{ padding:"10px", fontSize:"20px", fontWeight:"bolder"}}  type="submit">Subcribe Now</button>
+              <button className="reg" style={{ padding:"10px", fontSize:"18px", fontWeight:"bolder"}}  type="submit">Subcribe Now</button>
             </form>
           </div>
         </div>
