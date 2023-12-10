@@ -62,7 +62,7 @@ const WorkspaceRegistrationForm = () => {
         alert(`Make a transfer of ${amount} to MALHUB Account Number: 234567890 STANBIC IBTC`);
         toast.success('Registration successful');
       } else {
-        toast.error('You have been enrolled to this workspace.');
+        toast.error('You have been subscribed to this workspace package.');
       }
 
       setFormData({
@@ -70,7 +70,7 @@ const WorkspaceRegistrationForm = () => {
         workspaceName: "",
       });
 
-      navigate("/sidebar/workspaces");
+      navigate("/sidebar/workspace");
 
     } catch (error) {
       console.error("Error registering:", error.response?.data);
@@ -79,14 +79,14 @@ const WorkspaceRegistrationForm = () => {
   };
 
   return (
-    <div>
+    <div> 
       <div className="container">
         <div className="side">
           <Side />
         </div>
         <div className="content">
           <nav className='navBar'><h1>Dashboard</h1></nav>
-
+<br /> <br />
           <div className="workspaceForm">
             <h2>Workspace Registration Form</h2>
             <form onSubmit={handleSubmit}>
