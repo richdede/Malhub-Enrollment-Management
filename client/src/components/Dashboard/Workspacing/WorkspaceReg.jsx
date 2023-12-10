@@ -90,9 +90,10 @@ const WorkspaceRegistrationForm = () => {
           <div className="workspaceForm">
             <h2>Workspace Registration Form</h2>
             <form onSubmit={handleSubmit}> 
-              <label className="label">
+              <label className="label" style={{ padding:"10px", fontSize:"20px", fontWeight:"bold"}} >
                 Select a Workspace Package:
                 <select
+                  style={{ padding:"10px", fontSize:"20px"}}
                   name="selectedWorkspace"
                   value={formData.selectedWorkspace}
                   onChange={handleInputChange}
@@ -115,7 +116,7 @@ const WorkspaceRegistrationForm = () => {
                 </select>
               </label>
               <br />
-              <button className="reg" type="submit">Register</button>
+              <button className="reg" style={{ padding:"10px", fontSize:"20px", fontWeight:"bolder"}}  type="submit">Subcribe Now</button>
             </form>
           </div>
         </div>

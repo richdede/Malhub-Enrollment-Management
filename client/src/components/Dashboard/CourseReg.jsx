@@ -91,9 +91,10 @@ const RegistrationForm = () => {
         <div className="courseForm">
           <h2>Course Registration Form</h2>
           <form onSubmit={handleSubmit}>
-            <label className="label">
+            <label className="label" style={{ padding:"10px", fontSize:"20px", fontWeight:"bold"}}>
               Select Course: 
-              <select
+              <select 
+                style={{ padding:"10px", fontSize:"20px"}}
                 name="selectedCourse"
                 value={formData.selectedCourse}
                 onChange={handleInputChange}
@@ -104,7 +105,7 @@ const RegistrationForm = () => {
                 </option>
                 {courses ? (
                   courses.map((course) => (
-                    <option key={course.id} value={course?.id}>
+                    <option key={course.id} value={course?.id} >
                       {course?.name} - {course.amount}
                     </option>
                   ))
@@ -116,7 +117,7 @@ const RegistrationForm = () => {
               </select>
             </label>
             <br />
-            <button className="reg" type="submit">Register</button>
+            <button className="reg" style={{ padding:"10px", fontSize:"20px", fontWeight:"bolder"}} type="submit">Enroll Now</button>
           </form>
           </div>
         </div>
