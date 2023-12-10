@@ -92,10 +92,10 @@ const RegistrationForm = () => {
           <h3>Course Registration Form</h3>
           <form onSubmit={handleSubmit}>
 
-=======
-            <label className="label" style={{ padding:"10px", fontSize:"20px", fontWeight:"bold"}}>
-              Select Course: 
-              <select 
+
+            <label className="label" style={{ padding:"10px 0", fontSize:"20px", fontWeight:"bold"}}>
+              Select Course: <br />
+              <select  className="select"
                 style={{ padding:"10px", fontSize:"20px"}}
                 name="selectedCourse"
                 value={formData.selectedCourse}
@@ -112,7 +112,7 @@ const RegistrationForm = () => {
                     </option>
                   ))
                 ) : (
-                  <option value="" disabled>
+                  <option className="load" value="" disabled>
                     Loading courses...
                   </option>
                 )}

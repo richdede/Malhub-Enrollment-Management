@@ -46,17 +46,21 @@
 
 .reg{
     position: relative;
-    top: 36px;
+    top: 30px;
 }
 
 .select{
     position: relative;
     top: 8px;
-    width: 77vw;
+    width: 70%;
     background-color: #6066a5;
 color: white;
     padding: 10px;
     font-size: 20px;
+    border-radius: 8px;
+}
+.load{
+    color: white;
 }
 hr{
     position: relative;

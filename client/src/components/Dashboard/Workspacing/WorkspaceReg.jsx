@@ -88,11 +88,11 @@ const WorkspaceRegistrationForm = () => {
 
 <br /> <br />
           <div className="workspaceForm">
-            <h2>Workspace Registration Form</h2>
+            <h3>Workspace Registration Form</h3>
             <form onSubmit={handleSubmit}> 
-              <label className="label" style={{ padding:"10px", fontSize:"20px", fontWeight:"bold"}} >
-                Select a Workspace Package:
-                <select
+              <label className="label" style={{ padding:"10px 0", fontSize:"20px", fontWeight:"500"}} >
+                Select a Workspace Package: <br />
+                <select className="select"
                   style={{ padding:"10px", fontSize:"20px"}}
                   name="selectedWorkspace"
                   value={formData.selectedWorkspace}
@@ -109,7 +109,7 @@ const WorkspaceRegistrationForm = () => {
                       </option>
                     ))
                   ) : (
-                    <option value="" disabled>
+                    <option value="" style={{color:"white"}} disabled>
                       Loading workspaces...
                     </option>
                   )}
