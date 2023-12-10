@@ -87,12 +87,12 @@ const WorkspaceRegistrationForm = () => {
         <div className="content">
           <nav className='navBar'><h1>Dashboard</h1></nav>
 
-          <div className="workspaceForm">
-            <h2>Workspace Registration Form</h2>
+          <div className="courseForm">
+            <h3>Workspace Registration Form</h3>
             <form onSubmit={handleSubmit}>
               <label className="label">
-                Select Workspace:
-                <select
+                <strong> Select Workspace:</strong>
+                <select className="select"
                   name="selectedWorkspace"
                   value={formData.selectedWorkspace}
                   onChange={handleInputChange}

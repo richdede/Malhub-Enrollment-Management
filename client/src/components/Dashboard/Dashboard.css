@@ -3,8 +3,12 @@
 
 }
 .sidebars{
-    background-color: whitesmoke;
+    background-color: lightblue;
     display: flex;
+    height: 100vh;
+    overflow: hidden;
+    /* background-colo
+    r: red; */
 }
 .bars{
     display: flex;
@@ -57,8 +61,8 @@ hr{
     border: 1px solid black;
     position: relative;
     top: 60px;
-    /* left: 30px; */
-    width: 100%;
+    left: 16px;
+    width: 84%;
     /* padding: 0 10px 0 10px; */
     /* text-align: center; */
   /* border-radius: 5px; */

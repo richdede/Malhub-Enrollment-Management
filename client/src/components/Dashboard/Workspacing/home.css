@@ -9,13 +9,13 @@
       /* background-color: red; */
       /* color: white; */
       /* background: #3c4493; */
-      border-right: 2px solid black;
+      /* border-right: 2px solid black; */
   }
   
   .sidelists{
       display: flex;
       flex-direction: column;
-      padding: 80px 30px;
+      padding: 80px 16px;
       gap: 40px;
   }
   
@@ -23,7 +23,7 @@
       display: flex;
       gap: 30px;
       color: black;
-      padding: 15px;
+      padding: 12px 20px;
       border-radius: 10px;
   }
   
@@ -43,7 +43,7 @@
     /* overflow-y: hidden; */
     height: 90vh;
     position: relative;
-    top: 30px;
+    top: 33px;
     left: 30px;
       /* background-color: blue; */
       width: 100%;
@@ -75,10 +75,10 @@
   }
   
   /* courses css */
-  .courseLink{
+  .workspaceLink{
       color: white;
   }
-  .courseBtn{
+  .workspaceBtn{
     margin-top: 20px;
   
   }
@@ -93,11 +93,15 @@
   button:hover{
     background-color: #3c4493;
   }
-  .courseLink {
+  .workspaceLink {
     text-decoration: none;
     color: white;
   }
-  
+  .paragraph{
+    /* color: red; */
+    position: relative;
+    top: 6px;
+  }
   
   /* .courseLink:hover{
       color: black;
@@ -108,10 +112,10 @@
       left: 38px;
   }
   
-  .pargraph{
+  /* .pargraph{
     position: relative;
-    top: 6px;
-  }
+    top: 8px;
+  } */
   
   /* button{
     background-color: blue;

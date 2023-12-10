@@ -3,7 +3,6 @@ import React from 'react'
 import './Home.css'
 import { Link, NavLink } from 'react-router-dom';
 const image = "/Malhub-logo.png";
-import Home from '../pages/Home/Home';
 
 const Sides = () => {
   const sides = [

@@ -80,7 +80,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="container">
         <div className="side">
           <Sides />
@@ -89,11 +89,11 @@ const RegistrationForm = () => {
         <nav className='navBar'><h1>Dashboard</h1></nav>
 
         <div className="courseForm">
-          <h2>Course Registration Form</h2>
+          <h3>Course Registration Form</h3>
           <form onSubmit={handleSubmit}>
             <label className="label">
-              Select Course: 
-              <select
+               <strong>Select Course:</strong>
+              <select className="select"
                 name="selectedCourse"
                 value={formData.selectedCourse}
                 onChange={handleInputChange}
