@@ -27,7 +27,7 @@ const Workspace = () => {
 
   return (
     <div>
-      <h3> My Workspace Packages</h3> <br />
+      <h2> My Workspace Packages</h2> <br />
       {isLoading ? (
         <div>Fetching workspaces...</div>
       ) : registeredWorkspacepackage?.length ? (
@@ -61,10 +61,10 @@ const Workspace = () => {
         </div>
       ) : (
         <div>
-          <p className="paragraph">You are not subscribed to any workspace.</p> <br />
+          <p className="paragraph">You are not subscribed to any workspace.</p> 
           <p>
             <a className="workspaceLink" href="/WorkspaceReg">
-              <button className="workspaceBtn">Subcribe Now</button>
+              <button className="workspaceBtn" style={{ padding:"10px", fontSize:"18px", fontWeight:"bolder"}}  >Get a Workspace</button>
             </a>
           </p>
         </div>

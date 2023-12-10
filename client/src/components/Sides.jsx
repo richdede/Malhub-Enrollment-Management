@@ -20,19 +20,19 @@ const Sides = () => {
     },
     {
       id: 3,
-      name: "Workspace",
+      name: "Workspaces",
       path: "/sidebar/workspace",
       icon: "../../Public/workplace.png",
     },
     {
       id: 4,
-      name: "Payment history",
+      name: "Payment History",
       path: "payment",
       icon: "../../Public/transaction-history.png",
     },
     {
       id: 5,
-      name: "logout",
+      name: "Logout",
       path: "/",
       icon: "../../Public/icons8-logout-rounded-50.png",
     }
@@ -50,7 +50,7 @@ const Sides = () => {
                     sides.map((item) => (
                         <NavLink className='list' to={item.path} key={item.id}>
                             <img  className='icons'  src={item.icon} alt="" />
-                            <p>{item.name}</p>
+                            <p style={{ fontSize:"16px", fontWeight:"650"}}  >{item.name}</p>
                         </NavLink>
                     ))
                 }

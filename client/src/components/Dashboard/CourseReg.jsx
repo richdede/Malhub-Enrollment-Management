@@ -119,7 +119,7 @@ const RegistrationForm = () => {
               </select>
             </label>
             <br />
-            <button className="reg" style={{ padding:"10px", fontSize:"20px", fontWeight:"bolder"}} type="submit">Enroll Now</button>
+            <button className="reg" style={{ padding:"10px", fontSize:"18px", fontWeight:"bolder"}} type="submit">Enroll Now</button>
           </form>
           </div>
         </div>
