@@ -6,16 +6,22 @@
     height: 100vh;
   /* overflow-y: hidden; */
 
-    /* background-color: red; */
+    background-color: white;
+    border-radius: 8px;
+    height: 90vh;
+    position: relative;
+    top: 32px;
+    left: 10px;
+    /* padding: 10px; */
     /* color: white; */
     /* background: #3c4493; */
-    border-right: 2px solid black;
+    /* border-right: 2px solid black; */
 }
 
 .sidelists{
     display: flex;
     flex-direction: column;
-    padding: 80px 30px;
+    padding: 80px 16px;
     gap: 40px;
 }
 
@@ -37,13 +43,15 @@
     width: 20px;
 }
 
-
+.icons{
+  filter: saturate(3);
+}
 
 .containe{
   /* overflow-y: hidden; */
   height: 90vh;
   position: relative;
-  top: 30px;
+  top: 33px;
   left: 30px;
     /* background-color: blue; */
     width: 100%;
@@ -63,9 +71,9 @@
     /* position: relative; */
     /* left: 50px; */
     color: white;
-    border-radius: 4px;
+    border-radius: 8px;
 background-color: #6066a5;
-  width: 79vw;
+  width: 77vw;
 }
 .navBar h1{
   position: relative;
@@ -78,8 +86,11 @@ background-color: #6066a5;
 .courseLink{
     color: white;
 }
-.courseBtn {
+.courseBtn{
   margin-top: 20px;
+
+}
+button {
   padding: 10px 15px;
   background-color: #6066a5;
   color: white;
@@ -87,7 +98,7 @@ background-color: #6066a5;
   border-radius: 5px;
   cursor: pointer;
 }
-.courseBtn:hover{
+button:hover{
   background-color: #3c4493;
 }
 .courseLink {
@@ -107,7 +118,7 @@ background-color: #6066a5;
 
 .pargraph{
   position: relative;
-  top: 6px;
+  top: 4px;
 }
 
 /* button{

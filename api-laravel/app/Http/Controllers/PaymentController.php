@@ -41,4 +41,25 @@ class PaymentController extends Controller
 
         return response()->json(['payment' => $payment], 201);
     }
+
+
+    /**
+     * Get payments made by a particular user.
+     *
+     * @param  int  $userId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUserPayments($userId)
+    {
+        $userPayments = Payment::whereHas('enrollment.user', function ($query) use ($userId) {
+            $query->where('id', $userId);
+        })->with(['enrollment.course', 'user'])->get();
+
+        if ($userPayments->isEmpty()) {
+            return response()->json(['message' => 'No payment history found'], 200);
+        }
+
+        return response()->json(['userPayments' => $userPayments]);
+    }
+
 }

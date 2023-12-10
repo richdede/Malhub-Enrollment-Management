@@ -11,8 +11,8 @@ useEffect(() => {
 }, []);
 return (
 <div>
-           <h3 >My Dashboard</h3>
-           {user && <p className="welcomeP">Welcome, <strong>{user}</strong> </p>}
+           <h2 style={{ fontSize:"22px"}} >My Dashboard</h2>
+           {user && <p className="welcomeP">Welcome, <strong style={{ padding:"5px", fontSize:"24px"}}>{user}!</strong> </p>}
          </div>
 )
 }

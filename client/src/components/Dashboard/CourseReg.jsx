@@ -82,39 +82,65 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="container">
         <div className="side"></div>
-        <div className="courseForm">
-          <h2>Course Registration Form</h2>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Select Course:
-              <select
-                name="selectedCourse"
-                value={formData.selectedCourse}
-                onChange={handleInputChange}
-                required
+        <div className="side">{/* <Sides /> */}</div>
+        <div className="content">
+          <nav className="navBar">
+            <h1>Dashboard</h1>
+          </nav>
+
+          <div className="courseForm">
+            <h3>Course Registration Form</h3>
+            <form onSubmit={handleSubmit}>
+              <label
+                className="label"
+                style={{
+                  padding: "10px 0",
+                  fontSize: "20px",
+                  fontWeight: "bold",
+                }}
               >
-                <option value="" disabled>
-                  Select a course
-                </option>
-                {courses ? (
-                  courses.map((course) => (
-                    <option key={course.id} value={course?.id}>
-                      {course?.name} - {course.amount}
-                    </option>
-                  ))
-                ) : (
+                Select Course: <br />
+                <select
+                  className="select"
+                  style={{ padding: "10px", fontSize: "20px" }}
+                  name="selectedCourse"
+                  value={formData.selectedCourse}
+                  onChange={handleInputChange}
+                  required
+                >
                   <option value="" disabled>
-                    Loading courses...
+                    Select a course
                   </option>
-                )}
-              </select>
-            </label>
-            <br />
-            <button type="submit">Register</button>
-          </form>
+                  {courses ? (
+                    courses.map((course) => (
+                      <option key={course.id} value={course?.id}>
+                        {course?.name} - {course.amount}
+                      </option>
+                    ))
+                  ) : (
+                    <option className="load" value="" disabled>
+                      Loading courses...
+                    </option>
+                  )}
+                </select>
+              </label>
+              <br />
+              <button
+                className="reg"
+                style={{
+                  padding: "10px",
+                  fontSize: "20px",
+                  fontWeight: "bolder",
+                }}
+                type="submit"
+              >
+                Enroll Now
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

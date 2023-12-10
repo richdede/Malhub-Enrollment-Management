@@ -57,8 +57,13 @@ Route::get('/users/{userId}/workspace-packages', [CourseUserController::class, '
 
 Route::apiResource('payments', PaymentController::class);
 
+//userpayment
+Route::get('/users/{userId}/payments', [PaymentController::class, 'getUserPayments']);
 /**
  * To retrieve all payments: GET http://your-app-url/api/payments
  *  To retrieve a specific payment: GET http://your-app-url/api/payments/{id}
  *   To create a new payment: POST http://your-app-url/api/payments with the enrollment_id in the request payload.
  */
+
+
+ Route::put('/payments/{paymentId}/mark-as-paid', [CourseUserController::class, 'markPaymentAsPaid']);

@@ -140,4 +140,42 @@
 /* .enrollList {
   color: white;
 } */
+.sidebar {
+  width: 20%;
+  height: 90vh;
+  padding: 30px 0px 30px 30px;
+  border-right: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container {
+  display: flex;
+  gap: 30px;
+}
 
+.logo {
+  max-width: 5%;
+}
+
+.dashboardUl {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.dashboardLI {
+  display: flex;
+  gap: 10px;
+}
+.dashboardLI:hover {
+  color: blue;
+  background-color: powderblue;
+  cursor: pointer;
+}
+
+.welcomeP {
+  text-align: center;
+}
+.join {
+  background-color: blue;
+}

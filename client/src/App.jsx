@@ -20,6 +20,7 @@ import CourseReg from "./components/Dashboard/CourseReg";
 import WorkspaceReg from "./components/Dashboard/Workspacing/WorkspaceReg";
 import Welcome from "./components/Dashboard/Welcome";
 import PaymentHistory from "./components/Dashboard/PaymentHistory";
+import { AuthProvider } from "./components/auth/LogAuth";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("token");
@@ -33,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IndexHome />} />
           <Route path="about" element={<About />} />
-          <Route path="homer" element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/Dashboard" element={<Dashboard />} /> */}

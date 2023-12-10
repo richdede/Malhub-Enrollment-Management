@@ -22,9 +22,17 @@ class Payment extends Model
         'time_initiated' => 'datetime',
         'time_completed' => 'datetime',
     ];
-
     public function enrollment()
     {
         return $this->belongsTo(Enrollment::class);
+    }
+
+    public function getCourseAttribute()
+    {
+        return optional($this->enrollment)->course;
+    }
+    public function getUserAttribute()
+    {
+        return optional($this->enrollment)->user;
     }
 }

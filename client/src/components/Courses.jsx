@@ -26,24 +26,19 @@ const Courses = () => {
 
   return (
     <div>
-      <h3> My Courses</h3>
+      <h3> My Courses</h3> <br />
       {isLoading ? (
         <div>Fetching registered courses...</div>
       ) : registeredCourses?.length ? (
         <div>
           <h3>Registered Courses:</h3>
-          {/* <ul>
-            {registeredCourses.map(function (course) {
-              return <li key={course.id}>{course.name}</li>;
-            })}
-          </ul> */}
           <table>
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Amount</th>
-                <th>Date Created</th>
+                <th>Course Duration</th>
               </tr>
             </thead>
             <tbody>
@@ -59,16 +54,18 @@ const Courses = () => {
               })}
             </tbody>
           </table>
-          <button className="courseBtn">
-            {" "}
+          <button
+            className="courseBtn"
+            style={{ padding: "10px", fontSize: "20px", fontWeight: "bolder" }}
+          >
             <a className="courseLink" href="/CourseReg">
-              Register for a course
+              Explore Other Courses
             </a>{" "}
           </button>
         </div>
       ) : (
         <div>
-          <p className="pargraph">You have not registered for any courses.</p>
+          <p className="pargraph">You are not enrolled to any course.</p>
           <p>
             <button className="courseBtn">
               {" "}
@@ -80,10 +77,9 @@ const Courses = () => {
               {" "}
               <button className="courseBtn"> Register for a course </button>
             </a>
-
             <a className="courseLink" href="/CourseReg">
               {" "}
-              <button className="courseBtn"> Register for a course </button>
+              <button className="courseBtn"> Enroll Now </button>
             </a>
           </p>
         </div>

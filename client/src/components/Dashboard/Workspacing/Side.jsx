@@ -1,3 +1,5 @@
+
+import React from 'react'
 import './Home.css'
 import { Link, NavLink } from 'react-router-dom';
 const image = "/Malhub-logo.png";
@@ -12,29 +14,25 @@ const Sides = () => {
     },
     {
       id: 2,
-      name: "Courses",
+      name: "courses",
       path: "/sidebar/courses",
       icon: "../../Public/homework.png",
     },
     {
       id: 3,
-      name: "Workspace",
+      name: "workspace",
       path: "/sidebar/workspace",
       icon: "../../Public/workplace.png",
     },
     {
       id: 4,
-      name: "Payment history",
+      name: "payment history",
       path: "payment",
       icon: "../../Public/transaction-history.png",
     },
-    {
-      id: 5,
-      name: "logout",
-      path: "/",
-      icon: "../../Public/icons8-logout-rounded-50.png",
-    }
   ];
+
+
     return (
         <div className='sides'>
                 <NavLink to= "/"><img className='imag' src={image} alt="logo" style={{ maxWidth: "120px" }} /></NavLink>
@@ -55,4 +53,4 @@ const Sides = () => {
     )
 }
 
-export default Sides;
+export default Sides

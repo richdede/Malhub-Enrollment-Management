@@ -1,0 +1,149 @@
+*{
+    /* overflow-y: hidden; */
+  }
+  .sides{
+      /* width: 100vw; */
+      height: 100vh;
+    /* overflow-y: hidden; */
+  
+      /* background-color: red; */
+      /* color: white; */
+      /* background: #3c4493; */
+      /* border-right: 2px solid black; */
+  }
+  
+  .sidelists{
+      display: flex;
+      flex-direction: column;
+      padding: 80px 16px;
+      gap: 40px;
+  }
+  
+  .list{
+      display: flex;
+      gap: 30px;
+      color: black;
+      padding: 12px 20px;
+      border-radius: 10px;
+  }
+  
+  
+  .sidelists .active{
+      background:#6066a5;
+      color: white;
+  }
+  
+  .list img{
+      width: 20px;
+  }
+  
+  .workspaceLink{
+    color: white;
+  }
+  
+  .containe{
+    /* overflow-y: hidden; */
+    height: 90vh;
+    position: relative;
+    top: 33px;
+    left: 30px;
+      /* background-color: blue; */
+      width: 100%;
+  }
+  
+  .contents{
+      width: 24vw;
+      position: relative;
+      top: 40px;
+      /* padding: 10px 0 0 20px; */
+      /* background-color: wheat; */
+  }
+  .navBar{
+      /* background: #3c4493; */
+      /* border: 10px; */
+      /* border: 1px solid red; */
+      /* position: relative; */
+      /* left: 50px; */
+      color: white;
+      border-radius: 4px;
+  background-color: #6066a5;
+    width: 77vw;
+  }
+  .navBar h1{
+    position: relative;
+    left: 10px;
+    padding: 10px 0 10px  0;
+    /* font-weight: 400; */
+  }
+  
+  /* courses css */
+  .workspaceLink{
+      color: white;
+  }
+  .workspaceBtn{
+    margin-top: 20px;
+  
+  }
+  button {
+    padding: 10px 15px;
+    background-color: #6066a5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: #3c4493;
+  }
+  .workspaceLink {
+    text-decoration: none;
+    color: white;
+  }
+  .paragraph{
+    /* color: red; */
+    position: relative;
+    top: 6px;
+  }
+  
+  /* .courseLink:hover{
+      color: black;
+  } */
+  .imag{
+      position: relative;
+      top: 30px;
+      left: 38px;
+  }
+  
+  /* .pargraph{
+    position: relative;
+    top: 8px;
+  } */
+  
+  /* button{
+    background-color: blue;
+  } */
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  
+  
+  
