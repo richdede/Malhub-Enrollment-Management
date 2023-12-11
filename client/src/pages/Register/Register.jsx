@@ -57,8 +57,9 @@ const Register = () => {
   return (
     <div className="REGLOG">
       <div className="log">
-        <Link to="/">
-          <FaHome style={{ color: "white", fontSize: "20px" }} />
+        <Link to="/" style={{ color: "white", fontSize: "20px"  }}>
+          <FaHome style={{ color: "white", fontSize: "20px"  }} />
+          Back to Home
         </Link>
       </div>
       <div className="Register">

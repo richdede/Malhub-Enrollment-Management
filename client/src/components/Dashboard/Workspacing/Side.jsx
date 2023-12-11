@@ -27,9 +27,15 @@ const Sides = () => {
     {
       id: 4,
       name: "payment history",
-      path: "payment",
+      path: "/sidebar/payment",
       icon: "../../Public/transaction-history.png",
     },
+    {
+      id: 5,
+      name: "Logout",
+      path: "/",
+      icon: "../../Public/icons8-logout-rounded-50.png",
+    }
   ];
 
 

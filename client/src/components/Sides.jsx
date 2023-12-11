@@ -27,7 +27,7 @@ const Sides = () => {
     {
       id: 4,
       name: "Payment History",
-      path: "payment",
+      path: "/sidebar/payment",
       icon: "../../Public/transaction-history.png",
     },
     {
