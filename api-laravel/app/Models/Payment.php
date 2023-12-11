@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Enrollment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,8 +32,9 @@ class Payment extends Model
     {
         return optional($this->enrollment)->course;
     }
-    public function getUserAttribute()
+
+    public function user()
     {
-        return optional($this->enrollment)->user;
+        return $this->belongsTo(User::class);
     }
 }

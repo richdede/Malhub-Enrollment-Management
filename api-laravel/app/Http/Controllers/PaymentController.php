@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Enrollment;
 
 class PaymentController extends Controller
 {
@@ -53,7 +54,7 @@ class PaymentController extends Controller
     {
         $userPayments = Payment::whereHas('enrollment.user', function ($query) use ($userId) {
             $query->where('id', $userId);
-        })->with(['enrollment.course', 'user'])->get();
+        })->with(['enrollment', 'user'])->get();
 
         if ($userPayments->isEmpty()) {
             return response()->json(['message' => 'No payment history found'], 200);
@@ -61,5 +62,4 @@ class PaymentController extends Controller
 
         return response()->json(['userPayments' => $userPayments]);
     }
-
 }
